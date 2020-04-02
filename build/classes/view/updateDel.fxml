@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="489.0" prefWidth="474.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controller.UpdateDelController">
+   <children>
+      <Label layoutX="22.0" layoutY="76.0" prefHeight="27.0" prefWidth="75.0" text="NomClub">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="117.0" prefHeight="17.0" prefWidth="75.0" text="Horraire">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="149.0" text="Tarif">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="257.0" layoutY="78.0" text="Description">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="229.0" text="Capacité">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="190.0" text="Image">
+         <font>
+            <Font name="Gabriola" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="68.0" layoutY="6.0" prefHeight="54.0" prefWidth="361.0" text="Modifier et Supprimer Un Club" textFill="#0b68eb">
+         <font>
+            <Font name="Gabriola" size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomcluby" layoutX="82.0" layoutY="77.0" />
+      <TextField fx:id="tarify" layoutX="82.0" layoutY="148.0" />
+      <TextField fx:id="capacitey" layoutX="82.0" layoutY="228.0" />
+      <TextField fx:id="imagey" layoutX="82.0" layoutY="189.0" />
+      <TextArea fx:id="descriptiony" layoutX="290.0" layoutY="108.0" prefHeight="106.0" prefWidth="169.0" />
+      <TextField fx:id="horrairey" layoutX="82.0" layoutY="116.0" />
+      <TextField fx:id="idy" layoutX="82.0" layoutY="298.0" prefHeight="25.0" prefWidth="48.0" />
+      <Label layoutX="34.0" layoutY="302.0" text="Club ID" />
+      <Button layoutX="157.0" layoutY="298.0" mnemonicParsing="false" onAction="#getclub" text="Find" />
+      <Button layoutX="237.0" layoutY="379.0" mnemonicParsing="false" onAction="#updateclub" text="Update" />
+      <Button layoutX="338.0" layoutY="379.0" mnemonicParsing="false" onAction="#deleteclub" text="Delete" />
+   </children>
+</AnchorPane>

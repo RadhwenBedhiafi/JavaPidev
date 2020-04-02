@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DemandelistController">
+   <children>
+      <TableView fx:id="dem" layoutX="6.0" layoutY="26.0" prefHeight="200.0" prefWidth="691.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="dureInsc" prefWidth="116.0" text="durée_d'inscription" />
+            <TableColumn fx:id="modePayment" prefWidth="96.0" text="Mode_Payment" />
+            <TableColumn fx:id="numParent" prefWidth="86.0" text="Num_parent" />
+            <TableColumn fx:id="ancienClub" prefWidth="76.0" text="Ancien_Club" />
+            <TableColumn fx:id="objectif" prefWidth="99.0" text="Objectif" />
+            <TableColumn fx:id="clubId" prefWidth="55.0" text="club_id" />
+            <TableColumn fx:id="etatDemande" prefWidth="86.0" text="Etat_Demande" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
