@@ -13,7 +13,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="bg" prefHeight="623.0" prefWidth="785.0" style="-fx-background-color: #FAEBD7; -fx-border-color: #FFE4E1; -fx-border-width: 7; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gesenfant.Views.AjouterEnfantController">
    <children>
-      <Text fill="#dd4f4f" layoutX="93.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un enfant " textAlignment="CENTER" wrappingWidth="600.0">
+      <Text fill="#dd4f4f" layoutX="93.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Affecter un enfant " textAlignment="CENTER" wrappingWidth="600.0">
          <font>
             <Font name="Tempus Sans ITC" size="40.0" />
          </font>

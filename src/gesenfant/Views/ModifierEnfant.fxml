@@ -13,12 +13,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="804.0" style="-fx-background-color: #FAEBD7; -fx-border-color: #FFE4E1; -fx-border-width: 7; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gesenfant.Views.ModifierEnfantController">
    <children>
-      <Text layoutX="103.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier les information d'un enfant" textAlignment="CENTER" wrappingWidth="598.24560546875">
+      <Text layoutX="103.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Espace d'affectation et de permutation des enfants " textAlignment="CENTER" wrappingWidth="598.24560546875">
          <font>
             <Font name="Tempus Sans ITC" size="34.0" />
          </font>
       </Text>
-      <GridPane layoutX="29.0" layoutY="82.0" prefHeight="433.0" prefWidth="497.0">
+      <GridPane layoutX="29.0" layoutY="99.0" prefHeight="433.0" prefWidth="497.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -60,7 +60,6 @@
         </rowConstraints>
          <children>
             <Button fx:id="v" mnemonicParsing="false" prefHeight="31.0" prefWidth="204.0" text="Valider" />
-            <Button fx:id="r" mnemonicParsing="false" prefHeight="31.0" prefWidth="242.0" text="Videz les champs" GridPane.rowIndex="1" />
             <Button fx:id="retour" mnemonicParsing="false" prefHeight="31.0" prefWidth="234.0" text="Retour au menu précedent" GridPane.rowIndex="2" />
          </children>
       </GridPane>

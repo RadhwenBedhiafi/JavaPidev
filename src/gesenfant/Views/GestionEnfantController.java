@@ -49,7 +49,6 @@ public class GestionEnfantController implements Initializable {
     private TableColumn<Enfant, String> nationalite;
     @FXML
     private TableColumn<Enfant, String> smedical;
-    @FXML
     private Button ajouter;
     @FXML
     private Button modifier;
@@ -117,18 +116,7 @@ public class GestionEnfantController implements Initializable {
                 }
             }
         });
-        ajouter.setOnAction(e -> {
-            //(String id,String nom, String adresse, String prix, String surface,String capacite)
-
-            try {
-                Parent root;
-                root = FXMLLoader.load(getClass().getResource("AjouterEnfant.fxml"));
-                ajouter.getScene().setRoot(root);
-
-            } catch (IOException ex) {
-                Logger.getLogger(AjouterEnfantController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+        
  afficher.setOnAction(e -> {
             //(String id,String nom, String adresse, String prix, String surface,String capacite)
             en = table.getSelectionModel().getSelectedItem();
@@ -136,7 +124,7 @@ public class GestionEnfantController implements Initializable {
                 try {
                     Parent root;
                     root = FXMLLoader.load(getClass().getResource("GestionEnfant.fxml"));
-                    ajouter.getScene().setRoot(root);
+                    afficher.getScene().setRoot(root);
 
                 } catch (IOException ex) {
                     Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);

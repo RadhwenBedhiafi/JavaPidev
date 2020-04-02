@@ -84,7 +84,18 @@ public class AjouterEnfantController implements Initializable {
             ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femme");
             sexe.setItems(sexeList);
             sexe.getSelectionModel().select("Sexe");
-    
+            GestionEnfantController gec = new GestionEnfantController();
+            Enfant enf= gec.getE();
+            nom.setText(enf.getNom());
+            prenom.setText(enf.getPrenom());
+            sexe.setValue(enf.getSexe());
+            age.setText(String.valueOf(enf.getAge()));
+            nationalite.setText(enf.getNationalite());
+            smedical.setText(enf.getSmedical());
+            classe.setValue(enf.getClasse());
+          
+            
+            
 
 
 

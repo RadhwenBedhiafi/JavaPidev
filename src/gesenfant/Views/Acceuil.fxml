@@ -19,8 +19,8 @@
             <Font name="Juice ITC" size="57.0" />
          </font>
       </Text>
-      <Button fx:id="ButtonClasse" layoutX="247.0" layoutY="145.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="185.0" style="-fx-background-radius: 10;" text="Gestion des classes" />
-      <Button fx:id="ButtonEnfant" layoutX="247.0" layoutY="295.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="185.0" style="-fx-background-radius: 10;" text="Gestion des enfants" />
-      <Button fx:id="inscription" layoutX="494.0" layoutY="466.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="185.0" style="-fx-background-radius: 10;" text="Inscription" />
+      <Button fx:id="ButtonClasse" layoutX="247.0" layoutY="165.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="185.0" style="-fx-background-radius: 10;" text="Gestion des classes" />
+      <Button fx:id="ButtonEnfant" layoutX="247.0" layoutY="270.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="185.0" style="-fx-background-radius: 10;" text="Gestion des enfants" />
+      <Button fx:id="inscription" layoutX="247.0" layoutY="376.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="185.0" style="-fx-background-radius: 10;" text="Inscription" />
    </children>
 </AnchorPane>

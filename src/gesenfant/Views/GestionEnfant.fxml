@@ -28,15 +28,14 @@
             <Font name="Tw Cen MT Condensed Extra Bold" size="41.0" />
          </font>
       </Text>
-      <Button fx:id="afficher" layoutX="941.0" layoutY="563.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: #D2691E; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2;" text="Afficher la liste des enfants" textFill="WHITE" />
-      <Button fx:id="supprimer" layoutX="941.0" layoutY="428.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: yellow; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2;" text="Supprimer un enfant" />
-      <Button fx:id="modifier" layoutX="941.0" layoutY="300.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10; -fx-background-color: blue;" text="Modifier un enfant" textFill="WHITE" />
-      <Button fx:id="ajouter" layoutX="941.0" layoutY="174.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: red; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2;" text="Ajouter un enfant" textFill="WHITE" />
+      <Button fx:id="afficher" layoutX="941.0" layoutY="387.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: #D2691E; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2;" text="Afficher la liste des enfants" textFill="WHITE" />
+      <Button fx:id="supprimer" layoutX="941.0" layoutY="263.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: yellow; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2;" text="Supprimer un enfant" />
+      <Button fx:id="modifier" layoutX="941.0" layoutY="165.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-border-color: black; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-radius: 10; -fx-background-color: blue;" text="Affecter un enfant" textFill="WHITE" />
       <ImageView fitHeight="155.0" fitWidth="313.0" layoutY="689.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Desktop/pidev/wwwx.png" />
          </image>
       </ImageView>
-      <Button fx:id="retour" layoutX="941.0" layoutY="707.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: green; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2;" text="Retour au menu principal" textFill="WHITE" />
+      <Button fx:id="retour" layoutX="941.0" layoutY="496.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" style="-fx-background-color: green; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-width: 2;" text="Retour au menu principal" textFill="WHITE" />
    </children>
 </AnchorPane>

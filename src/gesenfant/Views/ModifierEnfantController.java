@@ -50,7 +50,6 @@ public class ModifierEnfantController implements Initializable {
     private TextField smedical;
     @FXML
     private Button v;
-    @FXML
     private Button r;
     @FXML
     private Button retour;
@@ -87,6 +86,14 @@ public class ModifierEnfantController implements Initializable {
         nationalite.setText(enf.getNationalite());
         smedical.setText(enf.getSmedical());
         classe.setValue(enf.getClasse());
+        nom.setEditable(false);
+        prenom.setEditable(false);
+        sexe.setDisable(true);
+        age.setEditable(false);
+        nationalite.setEditable(false);
+        smedical.setEditable(false);
+        
+        
         System.out.println("bla"+enf.getId());
          retour.setOnAction(e->{  
             Parent root ;
@@ -150,7 +157,7 @@ public class ModifierEnfantController implements Initializable {
              EnfantService es = new EnfantService();
              try {
                  es.updateEnfant(enfant);
-                 ch+="Modification effectué avec success!\n";
+                 ch+="Operation effectuée avec success!\n";
                 alert1.setContentText(ch);
                 alert1.show();
              } catch (SQLException ex) {
@@ -162,13 +169,7 @@ public class ModifierEnfantController implements Initializable {
                 alert.show();
          }
         });
-        r.setOnAction(e->{
-          nom.setText("");
-          prenom.setText("");
-          age.setText("");
-          nationalite.setText("");
-          smedical.setText("");
-        });  
+      
         }
     
       
