@@ -20,6 +20,59 @@ public class Enfant {
     private String nationalite;
     private String smedical;
     private String classe;
+    private int idUser;
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public Enfant(String nom, String prenom, String sexe, int age, String nationalite, String smedical, String classe, int idUser) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+        this.age = age;
+        this.nationalite = nationalite;
+        this.smedical = smedical;
+        this.classe = classe;
+        this.idUser = idUser;
+    }
+
+    public Enfant(String nom, String prenom, String sexe, int age, String nationalite, String smedical, int idUser) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+        this.age = age;
+        this.nationalite = nationalite;
+        this.smedical = smedical;
+        this.idUser = idUser;
+    }
+
+    public Enfant(int id, String nom, String prenom, String sexe, int age, String nationalite, String smedical, int idUser) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+        this.age = age;
+        this.nationalite = nationalite;
+        this.smedical = smedical;
+        this.idUser = idUser;
+    }
+
+    public Enfant(int id, String nom, String prenom, String sexe, int age, String nationalite, String smedical, String classe, int idUser) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+        this.age = age;
+        this.nationalite = nationalite;
+        this.smedical = smedical;
+        this.classe = classe;
+        this.idUser = idUser;
+    }
 
     public Enfant(String n, String p, boolean s, int pr, String nat, String m) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

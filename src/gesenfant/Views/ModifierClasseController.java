@@ -42,6 +42,8 @@ public class ModifierClasseController implements Initializable {
     private Button r;
     @FXML
     private Button v;
+    @FXML
+    private Button ajouter;
 
     /**
      * Initializes the controller class.
@@ -60,7 +62,7 @@ public class ModifierClasseController implements Initializable {
              root=FXMLLoader.load(getClass().getResource("GestionClasse.fxml"));
              retour.getScene().setRoot(root);
          } catch (IOException ex) {
-             Logger.getLogger(AjouterEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(ModifierClasseController.class.getName()).log(Level.SEVERE, null, ex);
          }
             
              });  

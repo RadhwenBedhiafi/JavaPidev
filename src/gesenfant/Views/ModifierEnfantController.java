@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gesenfant.Views;
+import gesenfant.Entities.Classe;
 import gesenfant.Service.EnfantService;
 
 import gesenfant.Entities.Enfant;
@@ -55,6 +56,8 @@ public class ModifierEnfantController implements Initializable {
     private Button retour;
     @FXML
     private ComboBox<String> classe;
+        private static Classe cc;
+
 
     /**
      * Initializes the controller class.
@@ -74,7 +77,8 @@ public class ModifierEnfantController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(ClasseService.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+       
+            
         ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femme");
         sexe.setItems(sexeList);
         GestionEnfantController gec = new GestionEnfantController();
@@ -92,9 +96,13 @@ public class ModifierEnfantController implements Initializable {
         age.setEditable(false);
         nationalite.setEditable(false);
         smedical.setEditable(false);
+        ClasseService cs = new ClasseService();
+        EnfantService es1 = new EnfantService();
+
+        
+
         
         
-        System.out.println("bla"+enf.getId());
          retour.setOnAction(e->{  
             Parent root ;
          try {
@@ -106,68 +114,77 @@ public class ModifierEnfantController implements Initializable {
             
              });  
          v.setOnAction(e->{
-          //Local(String nom, String adresse, float prix,float surface,int capacite)  
-         Alert alert = new Alert(Alert.AlertType.WARNING);
-
+            try {
+                //Local(String nom, String adresse, float prix,float surface,int capacite)
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                
                 alert.setTitle("Error");
-                  
-         Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
-
+                
+                Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
+                
                 alert.setTitle("Error");
-                 
-         String n= nom.getText();
-         String p=prenom.getText();
-         String s = sexe.getSelectionModel().getSelectedItem().toString();
-         String a= age.getText();
-         String na= nationalite.getText();
-         String m= smedical.getText();
-         String c = classe.getSelectionModel().getSelectedItem().toString();
-
-         String ch="";
-         Boolean ok =true;
-         int qt = -1;
-         int test=Integer.parseInt(a);
-         if(!n.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer un nom valide!";
-             ok=false;
-         }
-         if(!p.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer un prenom valide!";
-             ok=false;
-         }
-         if(!na.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer une nationalité valide!";
-             ok=false;
-         }
-         if(!m.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer un status medical valide!";
-             ok=false;
-         }
-         
-            if(!a.matches("\\d+")||a.length()==0||test>5||test==0)
-         {
-                ch += "Vous devez entrer un age valide!\n";
-                ok=false; 
-         }
-                 else qt= Integer.parseInt(a);
-         if(ok==true){
-             
-             Enfant enfant = new Enfant(n, p, s, qt,na,m,c);
-             enfant.setId(enf.getId());
-             EnfantService es = new EnfantService();
-             try {
-                 es.updateEnfant(enfant);
-                 ch+="Operation effectuée avec success!\n";
-                alert1.setContentText(ch);
-                alert1.show();
-             } catch (SQLException ex) {
-                 Logger.getLogger(AjouterEnfantController.class.getName()).log(Level.SEVERE, null, ex);
-             }
-         }
-         else {
-             alert.setContentText(ch);
-                alert.show();
-         }
+                
+                String n= nom.getText();
+                String p=prenom.getText();
+                String s = sexe.getSelectionModel().getSelectedItem().toString();
+                String a= age.getText();
+                String na= nationalite.getText();
+                String m= smedical.getText();
+                String c = classe.getSelectionModel().getSelectedItem().toString();
+                String cc=classe.getSelectionModel().getSelectedItem().toString();
+                String ch="";
+                Boolean ok =true;
+                int qt = -1;
+                int test=Integer.parseInt(a);
+                int x=cs.getEffectifTotal(cc);
+                int y=es1.getEffectif(cc);
+                if(y>x-1){
+                    ch+="Le nombre maximal est atteint, vous ne pouvez pas effectuer votre operation sur cette classe!";
+                    ok=false;
+                }
+                if(!n.matches("^[a-zA-Z]+$")){
+                    ch+="Vous devez entrer un nom valide!";
+                    ok=false;
+                }
+                if(!p.matches("^[a-zA-Z]+$")){
+                    ch+="Vous devez entrer un prenom valide!";
+                    ok=false;
+                }
+                if(!na.matches("^[a-zA-Z]+$")){
+                    ch+="Vous devez entrer une nationalité valide!";
+                    ok=false;
+                }
+                if(!m.matches("^[a-zA-Z]+$")){
+                    ch+="Vous devez entrer un status medical valide!";
+                    ok=false;
+                }
+                
+                if(!a.matches("\\d+")||a.length()==0||test>5||test==0)
+                {
+                    ch += "Vous devez entrer un age valide!\n";
+                    ok=false;
+                }
+                else qt= Integer.parseInt(a);
+                if(ok==true){
+                    
+                    Enfant enfant = new Enfant(n, p, s, qt,na,m,c);
+                    enfant.setId(enf.getId());
+                    EnfantService es = new EnfantService();
+                    try {
+                        es.updateEnfant(enfant);
+                        ch+="Operation effectuée avec success!\n";
+                        alert1.setContentText(ch);
+                        alert1.show();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(AjouterEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else {
+                    alert.setContentText(ch);
+                    alert.show();
+                }  } catch (SQLException ex) {
+                Logger.getLogger(ModifierEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
       
         }

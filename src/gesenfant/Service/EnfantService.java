@@ -26,7 +26,7 @@ public class EnfantService {
        
        
         public void ajouterEnfant(Enfant e) throws SQLException {
-        String req = "INSERT INTO `enfant` (`nom`, `prenom`, `sexe`, `age`, `nationalite`, `smedical`, `classe`) VALUES ( ?, ?, ?, ?, ?, ?, ?) ";
+        String req = "INSERT INTO `enfant` (`nom`, `prenom`, `sexe`, `age`, `nationalite`, `smedical`, `classe`, `idUser`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?) ";
         PreparedStatement pstm = connexion.prepareStatement(req);
         pstm.setString(1, e.getNom());
         pstm.setString(2, e.getPrenom());
@@ -35,6 +35,7 @@ public class EnfantService {
         pstm.setString(5, e.getNationalite());
         pstm.setString(6, e.getSmedical());
         pstm.setString(7, e.getClasse());
+        pstm.setInt(8, e.getIdUser());
         pstm.executeUpdate();
     }
     
@@ -44,7 +45,7 @@ public class EnfantService {
         Statement stm = connexion.createStatement();
         ResultSet result =  stm.executeQuery(req);    
         while(result.next()){
-            Enfant e = new Enfant(result.getString("nom"), result.getString("prenom"),result.getString("sexe"),result.getInt("age"),result.getString("nationalite"),result.getString("smedical"),result.getString("classe"));
+            Enfant e = new Enfant(result.getString("nom"), result.getString("prenom"),result.getString("sexe"),result.getInt("age"),result.getString("nationalite"),result.getString("smedical"),result.getString("classe"),result.getInt("idUser"));
             enfants.add(e);
         }
         
@@ -93,14 +94,96 @@ public class EnfantService {
             String nationalite = rs.getString("nationalite");
             String smedical = rs.getString("smedical");
             String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
 
-            Enfant e = new Enfant(id, nom, prenom, sexe, age, nationalite,smedical,classe);
+            Enfant e = new Enfant(id, nom, prenom, sexe, age, nationalite,smedical,classe,idUser);
+            arr.add(e);
+        }
+        return arr;
+    }
+     public List<Enfant> readAllID() throws SQLException {
+        List<Enfant> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from enfant order by id ASC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String sexe = rs.getString("sexe");
+            int age = rs.getInt("age");
+            String nationalite = rs.getString("nationalite");
+            String smedical = rs.getString("smedical");
+            String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
+
+            Enfant e = new Enfant(id, nom, prenom, sexe, age, nationalite,smedical,classe,idUser);
+            arr.add(e);
+        }
+        return arr;
+    }
+      public List<Enfant> readAllIDD() throws SQLException {
+        List<Enfant> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from enfant order by id DESC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String sexe = rs.getString("sexe");
+            int age = rs.getInt("age");
+            String nationalite = rs.getString("nationalite");
+            String smedical = rs.getString("smedical");
+            String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
+
+            Enfant e = new Enfant(id, nom, prenom, sexe, age, nationalite,smedical,classe,idUser);
+            arr.add(e);
+        }
+        return arr;
+    }
+    public List<Enfant> readAllAge() throws SQLException {
+        List<Enfant> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from enfant order by age ASC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String sexe = rs.getString("sexe");
+            int age = rs.getInt("age");
+            String nationalite = rs.getString("nationalite");
+            String smedical = rs.getString("smedical");
+            String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
+
+            Enfant e = new Enfant(id, nom, prenom, sexe, age, nationalite,smedical,classe,idUser);
+            arr.add(e);
+        }
+        return arr;
+    }
+    public List<Enfant> readAllAgeD() throws SQLException {
+        List<Enfant> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from enfant order by age DESC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String sexe = rs.getString("sexe");
+            int age = rs.getInt("age");
+            String nationalite = rs.getString("nationalite");
+            String smedical = rs.getString("smedical");
+            String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
+
+            Enfant e = new Enfant(id, nom, prenom, sexe, age, nationalite,smedical,classe,idUser);
             arr.add(e);
         }
         return arr;
     }
     
-    public Enfant getById(int id) throws SQLException{
+    public ArrayList<Enfant> getById(int id) throws SQLException{
+        List<Enfant> arr = new ArrayList<>();
      String req1="SELECT * FROM enfant WHERE id="+id;
        // PreparedStatement pre=con.prepareStatement(req1);
         ste=connexion.createStatement();
@@ -115,13 +198,16 @@ public class EnfantService {
             String nationalite = rs.getString("nationalite");
             String smedical = rs.getString("smedical");
             String classe = rs.getString("classe");
-            e = new Enfant(id, nom, prenom, sexe, age, nationalite, smedical,classe);   
+            int idUser = rs.getInt("idUser");
+            e = new Enfant(id, nom, prenom, sexe, age, nationalite, smedical,classe,idUser);
+            arr.add(e);
         }
-        return e;
+        return (ArrayList<Enfant>) arr;
          
     }
-    public Enfant getByClasse(String classe) throws SQLException{
-     String req1="SELECT * FROM enfant WHERE classe="+classe;
+   public ArrayList<Enfant> getByClasse(String classe) throws SQLException{
+               List<Enfant> arr = new ArrayList<>();
+     String req1="SELECT * FROM enfant WHERE classe like '"+classe+"%'";
        // PreparedStatement pre=con.prepareStatement(req1);
         ste=connexion.createStatement();
         ResultSet rs=ste.executeQuery(req1);
@@ -135,9 +221,71 @@ public class EnfantService {
             int age = rs.getInt("age");
             String nationalite = rs.getString("nationalite");
             String smedical = rs.getString("smedical");
-            e = new Enfant(id, nom, prenom, sexe, age, nationalite, smedical,classe);   
+            int idUser = rs.getInt("idUser");
+            e = new Enfant(id, nom, prenom, sexe, age, nationalite, smedical,classe,idUser);
+            arr.add(e);
+
         }
-        return e;
+        return (ArrayList<Enfant>) arr;
          
     }
+    public List<Enfant> readAllEtatB() throws SQLException{
+               List<Enfant> arr = new ArrayList<>();
+     String req1="SELECT * FROM enfant WHERE smedical='Bien'";
+       // PreparedStatement pre=con.prepareStatement(req1);
+        ste=connexion.createStatement();
+        ResultSet rs=ste.executeQuery(req1);
+        Enfant e = new Enfant();
+        while(rs.next())
+        {
+            int id = rs.getInt("id");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String sexe = rs.getString("sexe");
+            int age = rs.getInt("age");
+            String nationalite = rs.getString("nationalite");
+            String smedical = rs.getString("smedical");
+            String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
+            e = new Enfant(id, nom, prenom, sexe, age, nationalite, smedical,classe,idUser);
+            arr.add(e);
+
+        }
+        return (ArrayList<Enfant>) arr;
+         
+    }
+    public List<Enfant> readAllEtatM() throws SQLException{
+               List<Enfant> arr = new ArrayList<>();
+     String req1="SELECT * FROM enfant WHERE NOT smedical='Bien'";
+       // PreparedStatement pre=con.prepareStatement(req1);
+        ste=connexion.createStatement();
+        ResultSet rs=ste.executeQuery(req1);
+        Enfant e = new Enfant();
+        while(rs.next())
+        {
+            int id = rs.getInt("id");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String sexe = rs.getString("sexe");
+            int age = rs.getInt("age");
+            String nationalite = rs.getString("nationalite");
+            String smedical = rs.getString("smedical");
+            String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
+            e = new Enfant(id, nom, prenom, sexe, age, nationalite, smedical,classe,idUser);
+            arr.add(e);
+
+        }
+        return (ArrayList<Enfant>) arr;
+         
+    }
+    public int getEffectif(String classe) throws SQLException{
+        String req = "select count(*) from enfant where classe like '"+classe+"%'";
+        Statement stm = connexion.createStatement();
+        ResultSet result =  stm.executeQuery(req);    
+        result.next();
+        int count=result.getInt(1);
+         return count;
+    }
+    
 }

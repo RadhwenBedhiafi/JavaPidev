@@ -44,7 +44,7 @@ public class AcceuilController implements Initializable {
     @FXML
     private Button ButtonClasse;
     @FXML
-    private Button inscription;
+    private Button r;
     
     
 
@@ -74,17 +74,17 @@ public class AcceuilController implements Initializable {
             }
            
         }); 
-        inscription.setOnAction(e->{
+        r.setOnAction(e->{
             try {
                 Parent root;
-                root = FXMLLoader.load(getClass().getResource("Inscription.fxml"));
-                inscription.getScene().setRoot(root);
+                root = FXMLLoader.load(getClass().getResource("Login1.fxml"));
+                r.getScene().setRoot(root);
             } catch (IOException ex) {
                 Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
-        });
-        
+        }); 
+    
     }    
 
  

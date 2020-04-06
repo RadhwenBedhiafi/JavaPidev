@@ -6,6 +6,7 @@
 package gesenfant.Service;
 
 import gesenfant.Entities.Classe;
+import gesenfant.Entities.Enfant;
 import gesenfant.Util.DataBase;
 import java.sql.*;
 import java.util.ArrayList;
@@ -89,7 +90,9 @@ public class ClasseService {
         return arr;
     }
     
-    public Classe getById(int id) throws SQLException{
+    public ArrayList<Classe> getById(int id) throws SQLException{
+       List<Classe> arr = new ArrayList<>();
+
      String req1="SELECT * FROM classe WHERE id="+id;
        // PreparedStatement pre=con.prepareStatement(req1);
         ste=connexion.createStatement();
@@ -97,13 +100,76 @@ public class ClasseService {
         Classe c = new Classe();
         while(rs.next())
         {
-            String bloc = rs.getString("nom");
-            String libelle = rs.getString("prenom");
+            String bloc = rs.getString("bloc");
+            String libelle = rs.getString("libelle");
             int taillemax = rs.getInt("taillemax");
             c = new Classe(id, bloc, libelle, taillemax);   
+           arr.add(c);
         }
-        return c;
+        return (ArrayList<Classe>) arr;
          
     }
-    
+     public List<Classe> readAllA() throws SQLException {
+        List<Classe> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from classe order by taillemax ASC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String bloc = rs.getString("bloc");
+            String libelle = rs.getString("libelle");
+            int taillemax = rs.getInt("taillemax");
+            Classe c = new Classe(id, bloc, libelle, taillemax);
+            arr.add(c);
+        }
+        return arr;
+    } 
+     public List<Classe> readAllD() throws SQLException {
+        List<Classe> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from classe order by taillemax DESC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String bloc = rs.getString("bloc");
+            String libelle = rs.getString("libelle");
+            int taillemax = rs.getInt("taillemax");
+            Classe c = new Classe(id, bloc, libelle, taillemax);
+            arr.add(c);
+        }
+        return arr;
+    }
+      public List<Classe> readAllIDA() throws SQLException {
+        List<Classe> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from classe order by id ASC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String bloc = rs.getString("bloc");
+            String libelle = rs.getString("libelle");
+            int taillemax = rs.getInt("taillemax");
+            Classe c = new Classe(id, bloc, libelle, taillemax);
+            arr.add(c);
+        }
+        return arr;
+    } public List<Classe> readAllIDD() throws SQLException {
+        List<Classe> arr = new ArrayList<>();
+        ste = connexion.createStatement();
+        ResultSet rs = ste.executeQuery("select * from classe order by id DESC");
+        while (rs.next()) {
+            int id = rs.getInt(1);
+            String bloc = rs.getString("bloc");
+            String libelle = rs.getString("libelle");
+            int taillemax = rs.getInt("taillemax");
+            Classe c = new Classe(id, bloc, libelle, taillemax);
+            arr.add(c);
+        }
+        return arr;
+    }
+    public int getEffectifTotal(String libelle) throws SQLException{
+        String req = "select taillemax from classe where libelle like '"+libelle+"%'";
+        Statement stm = connexion.createStatement();
+        ResultSet result =  stm.executeQuery(req);    
+        result.next();
+        int count=result.getInt(1);
+         return count;
+    }
 }

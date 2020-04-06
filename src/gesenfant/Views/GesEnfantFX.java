@@ -27,7 +27,7 @@ public class GesEnfantFX extends Application {
     @Override
     public void start(Stage primaryStage) {
          try {
-            Parent root = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Login1.fxml"));
 
             Scene scene = new Scene(root);
 

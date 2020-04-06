@@ -5,6 +5,7 @@
  */
 package gesenfant.Views;
 import gesenfant.Entities.Enfant;
+import gesenfant.Entities.User;
 import gesenfant.Service.ClasseService;
 import gesenfant.Service.EnfantService;
 import gesenfant.Util.DataBase;
@@ -51,33 +52,26 @@ public class InscriptionController implements Initializable {
     @FXML
     private TextField smedical;
     @FXML
-    private Button v;
-    @FXML
-    private Button retour;
+    private Button valider;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femme");
+        
+            ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femme");
             sexe.setItems(sexeList);
             sexe.getSelectionModel().select("Sexe");
     
 
 
 
-        retour.setOnAction(e->{  
-            Parent root ;
-         try {
-             root=FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
-             retour.getScene().setRoot(root);
-         } catch (IOException ex) {
-             Logger.getLogger(AjouterEnfantController.class.getName()).log(Level.SEVERE, null, ex);
-         }
+          
             
-             }); 
-        v.setOnAction(e->{
+           
+        valider.setOnAction(e->{
+            User u=new User(255,"user","user","user");
           //Local(String nom, String adresse, float prix,float surface,int capacite)  
         Alert alert = new Alert(Alert.AlertType.WARNING);
 
@@ -93,25 +87,26 @@ ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femm
          String s = sexe.getSelectionModel().getSelectedItem().toString();
          String nat= nationalite.getText();
          String m= smedical.getText();
+         int us=u.getId();
 
          String ch="";
          Boolean ok =true;
          int pr = -1;
          int test=Integer.parseInt(a);
          if(!n.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer un nom valide!";
+             ch+="Vous devez entrer un nom valide!\n";
              ok=false;
          }
          if(!p.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer un prenom valide!";
+             ch+="Vous devez entrer un prenom valide!\n";
              ok=false;
          }
          if(!nat.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer une nationalité valide!";
+             ch+="Vous devez entrer une nationalité valide!\n";
              ok=false;
          }
          if(!m.matches("^[a-zA-Z]+$")){
-             ch+="Vous devez entrer un status medical valide!";
+             ch+="Vous devez entrer un status medical valide!\n";
              ok=false;
          }
          if(!a.matches("\\d+")||a.length()==0||test>5||test==0)
@@ -121,7 +116,7 @@ ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femm
          }
          else pr = Integer.parseInt(a);
          if(ok==true){
-             Enfant enfant = new Enfant(n, p, s,pr,nat,m);
+             Enfant enfant = new Enfant(n, p, s,pr,nat,m,us);
              EnfantService es = new EnfantService();
              try {
                 es.ajouterEnfant(enfant);

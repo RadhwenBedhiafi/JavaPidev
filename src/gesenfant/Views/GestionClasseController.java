@@ -22,9 +22,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -56,6 +60,20 @@ public class GestionClasseController implements Initializable {
     private TableColumn<Classe, Integer> tmax;
     @FXML
     private Button retour;
+    @FXML
+    private TextField rechercher;
+    @FXML
+    private Button rechercherbtn;
+    @FXML
+    private RadioButton iden;
+    @FXML
+    private ToggleGroup tri;
+    @FXML
+    private RadioButton ag;
+    @FXML
+    private RadioButton iden1;
+    @FXML
+    private RadioButton ag1;
 
     /**
      * Initializes the controller class.
@@ -85,10 +103,26 @@ public class GestionClasseController implements Initializable {
                 cl = table.getSelectionModel().getSelectedItem();
                     try {
                         cs.deleteClasse(cl);
+                        Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
+                         alert1.setContentText("Suppression effectuée avec succès!");
+                           alert1.show();
+                           
                     } catch (SQLException ex) {
                         Logger.getLogger(GestionClasseController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                
+                ClasseService cs5= new ClasseService(); 
+        ArrayList<Classe> cla5= new ArrayList<Classe>();
+        try {
+            cla5 = (ArrayList<Classe>) cs5.readAll();
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionClasseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ObservableList<Classe> obs5 = FXCollections.observableArrayList(cla5);
+        table.setItems(obs5);
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
+        libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+        tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
                 }
 
         });
@@ -119,18 +153,21 @@ public class GestionClasseController implements Initializable {
             }
         });
  afficher.setOnAction(e -> {
-            //(String id,String nom, String adresse, String prix, String surface,String capacite)
-            cl = table.getSelectionModel().getSelectedItem();
-            if (!(cl== null)) {
-                try {
-                    Parent root;
-                    root = FXMLLoader.load(getClass().getResource("GestionClasse.fxml"));
-                    ajouter.getScene().setRoot(root);
-
-                } catch (IOException ex) {
-                    Logger.getLogger(GestionClasseController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+          ClasseService cs5= new ClasseService(); 
+        ArrayList<Classe> cla5= new ArrayList<Classe>();
+        try {
+            cla5 = (ArrayList<Classe>) cs5.readAll();
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionClasseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ObservableList<Classe> obs5 = FXCollections.observableArrayList(cla5);
+        table.setItems(obs5);
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
+        libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+        tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
+        rechercher.setText("");
+        
         });
         retour.setOnAction(e->{  
             Parent root ;
@@ -142,9 +179,110 @@ public class GestionClasseController implements Initializable {
          }
             
              }); 
-
-    }    
+        rechercherbtn.setOnAction(e-> {
+                if (rechercher.getText().equalsIgnoreCase("") ){
+                    
+                    
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    
+                    alert.setTitle("Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Please , Search for something!");
+                    alert.show();}
+                
+                ClasseService cs1= new ClasseService();
+                ArrayList<Classe> cla1= new ArrayList<Classe>();
+                try {
+                    String r=rechercher.getText();
+                    int i=Integer.parseInt(r);
+                    cla1 = (ArrayList<Classe>) cs1.getById(i);
+                } catch (SQLException ex) {
+                    Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                ObservableList<Classe> obs1 = FXCollections.observableArrayList(cla1);
+                table.setItems(obs1);
+                id.setCellValueFactory(new PropertyValueFactory<>("id"));
+                bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
+                libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+                tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
+                
+        });  
+        iden.setOnAction(e-> {
+               
+                 ClasseService cs2= new ClasseService();
+                ArrayList<Classe> cla2= new ArrayList<Classe>();
+                try {
+                   
+                   
+                    cla2 = (ArrayList<Classe>) cs2.readAllIDA();
+                } catch (SQLException ex) {
+                    Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
+                table.setItems(obs2);
+                id.setCellValueFactory(new PropertyValueFactory<>("id"));
+                bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
+                libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+                tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
+            
+        });  
+        iden1.setOnAction(e-> {
+               
+                 ClasseService cs2= new ClasseService();
+                ArrayList<Classe> cla2= new ArrayList<Classe>();
+                try {
+                   
+                   
+                    cla2 = (ArrayList<Classe>) cs2.readAllIDD();
+                } catch (SQLException ex) {
+                    Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
+                table.setItems(obs2);
+                id.setCellValueFactory(new PropertyValueFactory<>("id"));
+                bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
+                libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+                tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
+            
+        });  ag.setOnAction(e-> {
+               
+                 ClasseService cs2= new ClasseService();
+                ArrayList<Classe> cla2= new ArrayList<Classe>();
+                try {
+                   
+                   
+                    cla2 = (ArrayList<Classe>) cs2.readAllA();
+                } catch (SQLException ex) {
+                    Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
+                table.setItems(obs2);
+                id.setCellValueFactory(new PropertyValueFactory<>("id"));
+                bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
+                libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+                tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
+            
+        });  ag1.setOnAction(e-> {
+               
+                ClasseService cs2= new ClasseService();
+                ArrayList<Classe> cla2= new ArrayList<Classe>();
+                try {
+                   
+                   
+                    cla2 = (ArrayList<Classe>) cs2.readAllD();
+                } catch (SQLException ex) {
+                    Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
+                table.setItems(obs2);
+                id.setCellValueFactory(new PropertyValueFactory<>("id"));
+                bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
+                libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+                tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
+    });
+    } 
     public Classe getC() {
         return cl;
     }
 }
+

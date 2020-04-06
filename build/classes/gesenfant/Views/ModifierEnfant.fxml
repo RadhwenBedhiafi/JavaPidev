@@ -1,67 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="804.0" style="-fx-background-color: #FAEBD7; -fx-border-color: #FFE4E1; -fx-border-width: 7; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gesenfant.Views.ModifierEnfantController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gesenfant.Views.ModifierEnfantController">
    <children>
-      <Text layoutX="103.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Espace d'affectation et de permutation des enfants " textAlignment="CENTER" wrappingWidth="598.24560546875">
+      <Pane layoutX="377.0" layoutY="22.0" prefHeight="107.0" prefWidth="769.0" style="-fx-background-color: #FA2C56;">
+         <children>
+            <Label layoutX="44.0" layoutY="33.0" prefHeight="21.0" prefWidth="612.0" text="Jardin d'enfant ELITE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox layoutY="-3.0" prefHeight="755.0" prefWidth="378.0" style="-fx-background-color: #3F2B63;">
+         <children>
+            <Pane prefHeight="280.0" prefWidth="378.0">
+               <children>
+                  <Pane layoutX="-6.0" layoutY="158.0" prefHeight="115.0" prefWidth="384.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 10;">
+                     <children>
+                        <Label layoutX="33.0" layoutY="49.0" prefHeight="21.0" prefWidth="293.0" text="Gestion des enfants" textFill="WHITE">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="retour" layoutX="19.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="191.0" styleClass="button4" stylesheets="@login1.css" text="Menu précedent" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" wrappingWidth="9.0" />
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="408.0" styleClass="button4" stylesheets="@login1.css" text="Affecter/Permutter enfant" textAlignment="CENTER" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" glyphStyle="pencil-ruler" size="20" wrappingWidth="19.0" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets left="30.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <TextField fx:id="nom" layoutX="515.0" layoutY="244.0" prefHeight="35.0" prefWidth="293.0" promptText="Nom" stylesheets="@login1.css" />
+      <Label layoutX="491.0" layoutY="160.0" prefHeight="30.0" prefWidth="447.0" text="Affecter ou permutter un enfant d'une classe!" textFill="#3f2b63">
          <font>
-            <Font name="Tempus Sans ITC" size="34.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
-      </Text>
-      <GridPane layoutX="29.0" layoutY="99.0" prefHeight="433.0" prefWidth="497.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <TextField fx:id="nom" promptText="Nom" GridPane.columnIndex="1" />
-            <TextField fx:id="prenom" promptText="Prénom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ComboBox fx:id="sexe" prefWidth="150.0" promptText="Sexe" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="age" promptText="Age" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="nationalite" promptText="Nationalité" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="smedical" promptText="Status Medical" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label prefHeight="21.0" prefWidth="372.0" text="Status Medical" GridPane.rowIndex="5" />
-            <Label prefHeight="21.0" prefWidth="455.0" text="Nationalité" GridPane.rowIndex="4" />
-            <Label prefHeight="21.0" prefWidth="436.0" text="Age" GridPane.rowIndex="3" />
-            <Label prefHeight="21.0" prefWidth="532.0" text="Sexe" GridPane.rowIndex="2" />
-            <Label prefHeight="21.0" prefWidth="506.0" text="Prénom" GridPane.rowIndex="1" />
-            <Label prefHeight="21.0" prefWidth="249.0" text="Nom" />
-            <Label text="Classe" GridPane.rowIndex="6" />
-            <ComboBox fx:id="classe" prefWidth="150.0" promptText="Classe" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-         </children>
-      </GridPane>
-      <GridPane layoutX="586.0" layoutY="134.0" prefHeight="340.0" prefWidth="173.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="270.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="210.0" minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button fx:id="v" mnemonicParsing="false" prefHeight="31.0" prefWidth="204.0" text="Valider" />
-            <Button fx:id="retour" mnemonicParsing="false" prefHeight="31.0" prefWidth="234.0" text="Retour au menu précedent" GridPane.rowIndex="2" />
-         </children>
-      </GridPane>
+      </Label>
+      <TextField fx:id="prenom" layoutX="516.0" layoutY="290.0" prefHeight="35.0" prefWidth="293.0" promptText="Prénom" stylesheets="@login1.css" />
+      <TextField fx:id="age" layoutX="516.0" layoutY="403.0" prefHeight="35.0" prefWidth="293.0" promptText="Age" stylesheets="@login1.css" />
+      <TextField fx:id="nationalite" layoutX="516.0" layoutY="449.0" prefHeight="35.0" prefWidth="293.0" promptText="Nationalité" stylesheets="@login1.css" />
+      <TextField fx:id="smedical" layoutX="517.0" layoutY="494.0" prefHeight="35.0" prefWidth="293.0" promptText="Status Medical" stylesheets="@login1.css" />
+      <ComboBox fx:id="sexe" layoutX="517.0" layoutY="344.0" prefWidth="150.0" promptText="Sexe" styleClass="linear-grad2" stylesheets="@login1.css" />
+      <Button fx:id="v" layoutX="714.0" layoutY="606.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" styleClass="linear-grad2" stylesheets="@login1.css" text="Validez!" />
+      <ComboBox fx:id="classe" layoutX="515.0" layoutY="545.0" prefWidth="150.0" promptText="Classe" styleClass="linear-grad2" stylesheets="@login1.css" />
    </children>
 </AnchorPane>

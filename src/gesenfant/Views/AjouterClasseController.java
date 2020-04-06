@@ -42,6 +42,8 @@ public class AjouterClasseController implements Initializable {
     private Button v;
     @FXML
     private TextField taillemax;
+    @FXML
+    private Button ajouter;
 
     /**
      * Initializes the controller class.
