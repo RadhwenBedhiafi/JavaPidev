@@ -31,6 +31,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import de.jensd.fx.glyphs.GlyphIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 
 /**
  * FXML Controller class
@@ -53,6 +55,7 @@ public class AcceuilController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         
         ButtonEnfant.setOnAction(e->{
             try {

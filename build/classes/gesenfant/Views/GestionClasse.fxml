@@ -34,7 +34,7 @@
                      </children>
                   </Pane>
                   <Button fx:id="retour" layoutX="19.0" layoutY="14.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="191.0" styleClass="button4" stylesheets="@login1.css" text="Menu précedent" textFill="WHITE" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="41.0" layoutY="38.0" size="20" wrappingWidth="9.0" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="41.0" layoutY="38.0" size="20" wrappingWidth="9.0" />
                </children>
             </Pane>
             <Button fx:id="ajouter" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="408.0" styleClass="button4" stylesheets="@login1.css" text="Ajouter une classe" textAlignment="CENTER" textFill="WHITE">
@@ -53,7 +53,7 @@
             </Button>
             <Button fx:id="modifier" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="408.0" styleClass="button4" stylesheets="@login1.css" text="Modifier les informations d'une classe" textAlignment="CENTER" textFill="WHITE">
                <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" glyphStyle="pencil-ruler" size="20" wrappingWidth="19.0" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="EDIT" glyphStyle="pencil-ruler" size="20" wrappingWidth="19.0" />
                </graphic>
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -81,7 +81,7 @@
             </Button>
             <Button fx:id="afficher" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="442.0" styleClass="button4" stylesheets="@login1.css" text="Actualiser" textAlignment="CENTER" textFill="WHITE">
                <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="GEAR" size="20" wrappingWidth="19.0" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="20" wrappingWidth="19.0" />
                </graphic>
                <font>
                   <Font name="System Bold" size="16.0" />

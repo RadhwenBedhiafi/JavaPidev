@@ -287,5 +287,21 @@ public class EnfantService {
         int count=result.getInt(1);
          return count;
     }
+    public int getEffectifHomme() throws SQLException{
+        String req = "select count(*) from enfant where sexe ='Homme'";
+        Statement stm = connexion.createStatement();
+        ResultSet result =  stm.executeQuery(req);    
+        result.next();
+        int count=result.getInt(1);
+         return count;
+    }
+     public int getEffectifFemme() throws SQLException{
+        String req = "select count(*) from enfant where sexe ='Femme'";
+        Statement stm = connexion.createStatement();
+        ResultSet result =  stm.executeQuery(req);    
+        result.next();
+        int count=result.getInt(1);
+         return count;
+    }
     
 }

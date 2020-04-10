@@ -20,17 +20,17 @@
                <children>
                   <Pane prefHeight="541.0" prefWidth="1044.0" style="-fx-background-color: #fff;">
                      <children>
-                        <TextField fx:id="nom" layoutX="689.0" layoutY="193.0" prefHeight="35.0" prefWidth="245.0" promptText="Nom" stylesheets="@login1.css" />
-                        <Label layoutX="612.0" layoutY="130.0" prefHeight="30.0" prefWidth="399.0" text="Inscrivez votre enfant!">
+                        <TextField fx:id="nom" layoutX="748.0" layoutY="193.0" prefHeight="35.0" prefWidth="245.0" promptText="Nom" stylesheets="@login1.css" />
+                        <Label layoutX="671.0" layoutY="130.0" prefHeight="30.0" prefWidth="399.0" text="Inscrivez votre enfant!">
                            <font>
                               <Font name="System Bold" size="29.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="prenom" layoutX="689.0" layoutY="257.0" prefHeight="35.0" prefWidth="245.0" promptText="Prénom" stylesheets="@login1.css" />
-                        <TextField fx:id="age" layoutX="689.0" layoutY="407.0" prefHeight="35.0" prefWidth="245.0" promptText="Age" stylesheets="@login1.css" />
-                        <TextField fx:id="nationalite" layoutX="689.0" layoutY="473.0" prefHeight="35.0" prefWidth="245.0" promptText="Nationalité" stylesheets="@login1.css" />
-                        <TextField fx:id="smedical" layoutX="689.0" layoutY="545.0" prefHeight="35.0" prefWidth="245.0" promptText="Status Medical" stylesheets="@login1.css" />
-                        <ComboBox fx:id="sexe" layoutX="685.0" layoutY="332.0" prefWidth="150.0" promptText="Sexe" styleClass="linear-grad1" stylesheets="@login1.css" />
+                        <TextField fx:id="prenom" layoutX="748.0" layoutY="257.0" prefHeight="35.0" prefWidth="245.0" promptText="Prénom" stylesheets="@login1.css" />
+                        <TextField fx:id="age" layoutX="748.0" layoutY="407.0" prefHeight="35.0" prefWidth="245.0" promptText="Age" stylesheets="@login1.css" />
+                        <TextField fx:id="nationalite" layoutX="748.0" layoutY="473.0" prefHeight="35.0" prefWidth="245.0" promptText="Nationalité" stylesheets="@login1.css" />
+                        <TextField fx:id="smedical" layoutX="748.0" layoutY="545.0" prefHeight="35.0" prefWidth="245.0" promptText="Status Medical" stylesheets="@login1.css" />
+                        <ComboBox fx:id="sexe" layoutX="744.0" layoutY="332.0" prefWidth="150.0" promptText="Sexe" styleClass="linear-grad1" stylesheets="@login1.css" />
                         <Pane layoutX="67.0" layoutY="55.0" prefHeight="762.0" prefWidth="444.0" styleClass="linear-grad1" stylesheets="@login1.css">
                            <children>
                               <Label layoutX="84.0" layoutY="301.0" prefHeight="21.0" prefWidth="246.0" text="Jardin d'enfant" textFill="WHITE">
@@ -43,9 +43,14 @@
                                     <Image url="file:/C:/Users/elbaz/OneDrive/Desktop/pidev/wwwx.png" />
                                  </image>
                               </ImageView>
+                              <Button fx:id="shutdown" layoutX="40.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="shutdown" stylesheets="@login1.css" textFill="WHITE" />
                            </children>
                         </Pane>
-                        <Button fx:id="valider" layoutX="840.0" layoutY="630.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" styleClass="button2" stylesheets="@login1.css" text="Validez!" />
+                        <Button fx:id="valider" layoutX="899.0" layoutY="630.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" styleClass="button2" stylesheets="@login1.css" text="Validez!" />
+                        <Button fx:id="web" layoutX="929.0" layoutY="769.0" mnemonicParsing="false" styleClass="linear-grad2" stylesheets="@login1.css" text="Inscrivez votre enfant sur notre site web!" />
+                        <Button fx:id="pause" layoutX="1159.0" layoutY="73.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="pause" stylesheets="@login1.css" />
+                        <Button fx:id="play" layoutX="1086.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="play" stylesheets="@login1.css" />
+                        <Button fx:id="stop" layoutX="1014.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="stop" stylesheets="@login1.css" />
                      </children>
                   </Pane>
                </children>

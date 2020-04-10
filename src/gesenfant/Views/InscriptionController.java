@@ -9,6 +9,8 @@ import gesenfant.Entities.User;
 import gesenfant.Service.ClasseService;
 import gesenfant.Service.EnfantService;
 import gesenfant.Util.DataBase;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.Media;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,7 +32,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+ 
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+ 
+
 
 /**
  * FXML Controller class
@@ -53,12 +67,30 @@ public class InscriptionController implements Initializable {
     private TextField smedical;
     @FXML
     private Button valider;
+    @FXML
+    private Button web;
+    @FXML
+    private Button play;
+    @FXML
+    private Button pause;
+    @FXML
+    private Button stop;
+    @FXML
+    private Button shutdown;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        MediaPlayer mediaplayer;
+        
+        Media musicFile= new Media("file:///C:/Users/elbaz/Downloads/Music/abc.mp3");
+        mediaplayer= new MediaPlayer(musicFile);
+        mediaplayer.setAutoPlay(false);
+        mediaplayer.setVolume(0.1);
+        
+        
         
             ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femme");
             sexe.setItems(sexeList);
@@ -133,6 +165,39 @@ public class InscriptionController implements Initializable {
              alert.show();
          }
         });
+        web.setOnAction(e->{
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\elbaz\\Downloads\\Compressed\\chromedriver_win32\\chromedriver.exe");
+ 
+// Initialize browser
+WebDriver driver=new ChromeDriver();
+ 
+// Open facebook
+driver.get("http://localhost/GesEnfantWebDev/web/app_dev.php/");
+ 
+// Maximize browser
+ 
+driver.manage().window().maximize();
+            
+             });
+        play.setOnAction(e->{
+            mediaplayer.play();
+        });
+         pause.setOnAction(e->{
+            mediaplayer.pause();
+        });
+          stop.setOnAction(e->{
+            mediaplayer.stop();
+        });
+           shutdown.setOnAction(e->{
+            try {
+                Parent root;
+                root = FXMLLoader.load(getClass().getResource("Login1.fxml"));
+                shutdown.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(InscriptionController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+        }); 
       
     }           
    

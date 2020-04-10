@@ -17,6 +17,10 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+
 
 
 
@@ -30,12 +34,7 @@ public class GesEnfant {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        //Enfant e = new Enfant("Amine", "Bedhiaif","Homme",26,"Tunisien","Bien");
-        ClasseService cs = new ClasseService();
-        int x=cs.getEffectifTotal("Lion");
-        System.out.println(x);
-                
-        
+     
     
 }
 }

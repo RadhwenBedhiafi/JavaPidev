@@ -142,3 +142,66 @@
 {
 	-fx-background-color: linear-gradient(to bottom left, #FA2C56,#ffffff	);
 }
+.play
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/play.png") 
+}
+.play:hover
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/play.png") 
+}
+.play:pressed
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/play.png") ;
+}
+.pause
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/pause.png") ;
+}
+
+.pause:hover
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/pause.png") ;
+}
+
+.pause:pressed
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/pause.png") ;
+}
+.stop
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/stop.png") ;
+}
+.stop:hover
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/stop.png") ;
+}
+.stop:pressed
+{
+    -fx-background-color: #ffffff;
+    -fx-background-image: url("/buttonimage/stop.png") ;
+}
+.shutdown
+{
+    -fx-background-color: rgba(0,0,0,0.0);
+
+    -fx-background-image: url("/buttonimage/shutdown.png") ;
+}
+.shutdown:hover
+{
+    -fx-background-color: rgba(0,0,0,0.0);
+    -fx-background-image: url("/buttonimage/shutdown.png") ;
+}
+.shutdown:pressed
+{
+    -fx-background-color: rgba(0,0,0,0.0);
+    -fx-background-image: url("/buttonimage/shutdown.png") ;
+}

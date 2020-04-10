@@ -4,6 +4,15 @@
  * and open the template in the editor.
  */
 package gesenfant.Views;
+import com.itextpdf.text.BaseColor;
+import static com.itextpdf.text.BaseColor.GRAY;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -13,9 +22,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import gesenfant.Entities.Enfant;
 import gesenfant.Service.EnfantService;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -83,6 +95,12 @@ public class GestionEnfantController implements Initializable {
     private Button chercher;
     @FXML
     private Button etat;
+    @FXML
+    private Button gnrtpdf;
+        private static ArrayList<Enfant> enf11;
+    @FXML
+    private Button stat;
+
     
 
     /**
@@ -325,7 +343,205 @@ public class GestionEnfantController implements Initializable {
                 Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
             }
            
+        });
+       stat.setOnAction(e->{
+            try {
+                Parent root;
+                root = FXMLLoader.load(getClass().getResource("Statistique.fxml"));
+                stat.getScene().setRoot(root);
+            } catch (IOException ex) {
+                Logger.getLogger(AcceuilController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+        });
+         EnfantService es11= new EnfantService(); 
+        enf11= new ArrayList<Enfant>();
+        try {
+            enf11 = (ArrayList<Enfant>) es11.readAll();
+        } catch (SQLException ex) {
+            Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ObservableList<Enfant> obs21 = FXCollections.observableArrayList(enf11);
+        table.setItems(obs21);
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
+        age.setCellValueFactory(new PropertyValueFactory<>("age"));
+        nationalite.setCellValueFactory(new PropertyValueFactory<>("nationalite"));
+        smedical.setCellValueFactory(new PropertyValueFactory<>("smedical"));
+        classe.setCellValueFactory(new PropertyValueFactory<>("classe"));
+    
+    gnrtpdf.setOnAction(e->{
+            
+           GeneratePdf();
+           Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
+                         alert1.setContentText("Fichier generé avec succès!");
+                           alert1.show();
         }); 
+    }
+   public static void GeneratePdf() {
+       
+       
+        Document document = new Document();
+
+        PdfWriter writer = null;    //C:\Users\malek.heni\Desktop
+        try {
+            writer = PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\elbaz\\OneDrive\\Desktop\\Liste.pdf"));
+        } catch (FileNotFoundException ex) {
+        } catch (DocumentException ex) {
+        }
+        document.open();
+        document.addTitle("Liste des classes");
+        document.addSubject("Jardin d'enfant");
+        document.addAuthor("ELITE");
+        document.addCreator("Bedhiafi Radhwen");
+        Paragraph preface = new Paragraph();
+        preface.add(new Paragraph("Liste des classes:"));
+        preface.add(new Paragraph("Rapport genéré par: Bedhiafi Radhwen" + ", le " + new Date()));
+        try {
+            document.add(preface);
+        } catch (DocumentException ex) {
+        }
+        PdfPTable table = new PdfPTable(7); // 3 columns.
+        table.setWidthPercentage(100); //Width 100%
+        table.setSpacingBefore(10f); //Space before table
+        table.setSpacingAfter(10f); //Space after table
+
+        //Set Column widths
+        float[] columnWidths = {0.75f, 2f, 2.5f, 1f, 1f, 1f};
+        try {
+            table.setWidths(columnWidths);
+        } catch (DocumentException ex) {
+        }
+        /*PdfPCell cell1 = new PdfPCell(new Paragraph("Id"));
+        cell1.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        cell1.setPaddingLeft(10);
+        cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell1.setVerticalAlignment(Element.ALIGN_MIDDLE);*/
+
+        PdfPCell cell2 = new PdfPCell(new Paragraph("NOM"));
+        cell2.setBackgroundColor(BaseColor.GRAY);
+        cell2.setPaddingLeft(10);
+        cell2.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell2.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+        PdfPCell cell3 = new PdfPCell(new Paragraph("PRENOM"));
+        cell3.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        cell3.setPaddingLeft(10);
+        cell3.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell3.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+        PdfPCell cell4 = new PdfPCell(new Paragraph("SEXE"));
+        cell4.setBackgroundColor(BaseColor.GRAY);
+        cell4.setPaddingLeft(10);
+        cell4.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell4.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+        PdfPCell cell5 = new PdfPCell(new Paragraph("AGE"));
+        cell5.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        cell5.setPaddingLeft(10);
+        cell5.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell5.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+        PdfPCell cell6 = new PdfPCell(new Paragraph("NATIONALITE"));
+        cell6.setBackgroundColor(BaseColor.GRAY);
+        cell6.setPaddingLeft(10);
+        cell6.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell6.setVerticalAlignment(Element.ALIGN_MIDDLE);
+        PdfPCell cell7 = new PdfPCell(new Paragraph("STATUS MEDICAL"));
+        cell7.setBackgroundColor(BaseColor.GRAY);
+        cell7.setPaddingLeft(10);
+        cell7.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell7.setVerticalAlignment(Element.ALIGN_MIDDLE);
+        PdfPCell cell8 = new PdfPCell(new Paragraph("CLASSE"));
+        cell8.setBackgroundColor(BaseColor.GRAY);
+        cell8.setPaddingLeft(10);
+        cell8.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell8.setVerticalAlignment(Element.ALIGN_MIDDLE);
+        //To avoid having the cell border and the content overlap, if you are having thick cell borders
+        //cell1.setUserBorderPadding(true);
+        //cell2.setUserBorderPadding(true);
+        //cell3.setUserBorderPadding(true);
+
+        //table.addCell(cell1);
+        table.addCell(cell2);
+        table.addCell(cell3);
+        table.addCell(cell4);
+        table.addCell(cell5);
+        table.addCell(cell6);
+        table.addCell(cell7);
+        table.addCell(cell8);
+
+
+        enf11.forEach((Enfant en) -> {
+            /*PdfPCell cell11 = new PdfPCell(new Paragraph(String.valueOf(loc.getUser().getId())));
+            cell11.setPaddingLeft(10);
+            cell11.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell11.setVerticalAlignment(Element.ALIGN_MIDDLE);*/
+
+            PdfPCell cell21 = new PdfPCell(new Paragraph(en.getNom()));
+            cell21.setPaddingLeft(10);
+            cell21.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell21.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+            PdfPCell cell31 = new PdfPCell(new Paragraph(en.getPrenom()));
+            cell31.setPaddingLeft(10);
+            cell31.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell31.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+            PdfPCell cell41 = new PdfPCell(new Paragraph(en.getSexe()));
+            cell41.setPaddingLeft(10);
+            cell41.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell41.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+            PdfPCell cell51 = new PdfPCell(new Paragraph(String.valueOf(en.getAge())));
+            cell51.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            cell51.setPaddingLeft(10);
+            cell51.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            PdfPCell cell61 = new PdfPCell(new Paragraph(en.getNationalite()));
+            cell61.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell61.setPaddingLeft(10);
+            cell61.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            PdfPCell cell71 = new PdfPCell(new Paragraph(en.getSmedical()));
+            cell71.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell71.setPaddingLeft(10);
+            cell71.setHorizontalAlignment(Element.ALIGN_CENTER);
+            PdfPCell cell81 = new PdfPCell(new Paragraph(en.getClasse()));
+            cell81.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell81.setPaddingLeft(10);
+            cell81.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            //cell11.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell21.setBackgroundColor(BaseColor.GRAY);
+            cell31.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell41.setBackgroundColor(BaseColor.GRAY);
+            cell51.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell61.setBackgroundColor(BaseColor.GRAY);
+            cell71.setBackgroundColor(BaseColor.LIGHT_GRAY);
+            cell81.setBackgroundColor(BaseColor.LIGHT_GRAY);
+
+            //table.addCell(cell11);
+            table.addCell(cell21);
+            table.addCell(cell31);
+            table.addCell(cell41);
+            table.addCell(cell51);
+            table.addCell(cell61);
+            table.addCell(cell71);
+            table.addCell(cell81);
+        });
+
+        try {
+            document.add(table);
+        } catch (DocumentException ex) {
+           
+        }
+
+        document.close();
+        writer.close();
+    
   
 
     }    
