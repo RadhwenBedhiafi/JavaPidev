@@ -57,8 +57,6 @@ public class ListeClasseController implements Initializable {
     @FXML
     private TableView<Enfant> table;
     @FXML
-    private TableColumn<Enfant, Integer> id;
-    @FXML
     private TableColumn<Enfant, String> nom;
     @FXML
     private TableColumn<Enfant, String> prenom;
@@ -102,7 +100,6 @@ public class ListeClasseController implements Initializable {
         }
         ObservableList<Enfant> obs = FXCollections.observableArrayList(enf);
         table.setItems(obs);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -132,7 +129,6 @@ public class ListeClasseController implements Initializable {
                 }
                 ObservableList<Enfant> obs2 = FXCollections.observableArrayList(enf2);
                 table.setItems(obs2);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
                 prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
                 sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));

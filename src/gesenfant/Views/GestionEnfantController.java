@@ -52,8 +52,6 @@ public class GestionEnfantController implements Initializable {
     @FXML
     private TableView<Enfant> table;
     @FXML
-    private TableColumn<Enfant, Integer> id;
-    @FXML
     private TableColumn<Enfant, String> nom;
     @FXML
     private TableColumn<Enfant, String> prenom;
@@ -117,7 +115,6 @@ public class GestionEnfantController implements Initializable {
         }
         ObservableList<Enfant> obs = FXCollections.observableArrayList(enf);
         table.setItems(obs);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -150,7 +147,6 @@ public class GestionEnfantController implements Initializable {
         }
         ObservableList<Enfant> obs6 = FXCollections.observableArrayList(enf6);
         table.setItems(obs6);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -188,7 +184,6 @@ public class GestionEnfantController implements Initializable {
         }
         ObservableList<Enfant> obs5 = FXCollections.observableArrayList(enf5);
         table.setItems(obs5);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -215,14 +210,12 @@ public class GestionEnfantController implements Initializable {
                 ArrayList<Enfant> enf1= new ArrayList<Enfant>();
                 try {
                     String r=rechercher.getText();
-                    int i=Integer.parseInt(r);
-                    enf1 = (ArrayList<Enfant>) es1.getById(i);
+                    enf1 = (ArrayList<Enfant>) es1.getByNom(r);
                 } catch (SQLException ex) {
                     Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 ObservableList<Enfant> obs1 = FXCollections.observableArrayList(enf1);
                 table.setItems(obs1);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
                 prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
                 sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -243,7 +236,6 @@ public class GestionEnfantController implements Initializable {
                 }
                 ObservableList<Enfant> obs2 = FXCollections.observableArrayList(enf2);
                 table.setItems(obs2);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
                 prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
                 sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -264,7 +256,6 @@ public class GestionEnfantController implements Initializable {
                 }
                 ObservableList<Enfant> obs2 = FXCollections.observableArrayList(enf2);
                 table.setItems(obs2);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
                 prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
                 sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -284,7 +275,6 @@ public class GestionEnfantController implements Initializable {
                 }
                 ObservableList<Enfant> obs3 = FXCollections.observableArrayList(enf3);
                 table.setItems(obs3);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
                 prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
                 sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -304,7 +294,6 @@ public class GestionEnfantController implements Initializable {
                 }
                 ObservableList<Enfant> obs4 = FXCollections.observableArrayList(enf4);
                 table.setItems(obs4);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
                 prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
                 sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -363,7 +352,6 @@ public class GestionEnfantController implements Initializable {
         }
         ObservableList<Enfant> obs21 = FXCollections.observableArrayList(enf11);
         table.setItems(obs21);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         sexe.setCellValueFactory(new PropertyValueFactory<>("sexe"));
@@ -409,7 +397,7 @@ public class GestionEnfantController implements Initializable {
         table.setSpacingAfter(10f); //Space after table
 
         //Set Column widths
-        float[] columnWidths = {0.75f, 2f, 2.5f, 1f, 1f, 1f};
+        float[] columnWidths = {0.75f, 2f, 2.5f, 1f, 1f, 1f, 1f};
         try {
             table.setWidths(columnWidths);
         } catch (DocumentException ex) {

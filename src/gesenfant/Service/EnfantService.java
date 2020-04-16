@@ -104,7 +104,7 @@ public class EnfantService {
      public List<Enfant> readAllID() throws SQLException {
         List<Enfant> arr = new ArrayList<>();
         ste = connexion.createStatement();
-        ResultSet rs = ste.executeQuery("select * from enfant order by id ASC");
+        ResultSet rs = ste.executeQuery("select * from enfant order by nom ASC");
         while (rs.next()) {
             int id = rs.getInt(1);
             String nom = rs.getString("nom");
@@ -124,7 +124,7 @@ public class EnfantService {
       public List<Enfant> readAllIDD() throws SQLException {
         List<Enfant> arr = new ArrayList<>();
         ste = connexion.createStatement();
-        ResultSet rs = ste.executeQuery("select * from enfant order by id DESC");
+        ResultSet rs = ste.executeQuery("select * from enfant order by nom DESC");
         while (rs.next()) {
             int id = rs.getInt(1);
             String nom = rs.getString("nom");
@@ -192,6 +192,29 @@ public class EnfantService {
         while(rs.next())
         {
             String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            String sexe = rs.getString("sexe");
+            int age = rs.getInt("age");
+            String nationalite = rs.getString("nationalite");
+            String smedical = rs.getString("smedical");
+            String classe = rs.getString("classe");
+            int idUser = rs.getInt("idUser");
+            e = new Enfant(id, nom, prenom, sexe, age, nationalite, smedical,classe,idUser);
+            arr.add(e);
+        }
+        return (ArrayList<Enfant>) arr;
+         
+    }
+     public ArrayList<Enfant> getByNom(String nom) throws SQLException{
+        List<Enfant> arr = new ArrayList<>();
+     String req1="SELECT * FROM enfant WHERE nom like '"+nom+"%'";
+       // PreparedStatement pre=con.prepareStatement(req1);
+        ste=connexion.createStatement();
+        ResultSet rs=ste.executeQuery(req1);
+        Enfant e = new Enfant();
+        while(rs.next())
+        {
+            int id = rs.getInt("id");
             String prenom = rs.getString("prenom");
             String sexe = rs.getString("sexe");
             int age = rs.getInt("age");

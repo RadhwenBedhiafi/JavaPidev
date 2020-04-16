@@ -140,7 +140,7 @@ public class ClasseService {
       public List<Classe> readAllIDA() throws SQLException {
         List<Classe> arr = new ArrayList<>();
         ste = connexion.createStatement();
-        ResultSet rs = ste.executeQuery("select * from classe order by id ASC");
+        ResultSet rs = ste.executeQuery("select * from classe order by bloc ASC");
         while (rs.next()) {
             int id = rs.getInt(1);
             String bloc = rs.getString("bloc");
@@ -153,7 +153,7 @@ public class ClasseService {
     } public List<Classe> readAllIDD() throws SQLException {
         List<Classe> arr = new ArrayList<>();
         ste = connexion.createStatement();
-        ResultSet rs = ste.executeQuery("select * from classe order by id DESC");
+        ResultSet rs = ste.executeQuery("select * from classe order by bloc DESC");
         while (rs.next()) {
             int id = rs.getInt(1);
             String bloc = rs.getString("bloc");

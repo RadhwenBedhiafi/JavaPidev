@@ -51,8 +51,6 @@ public class GestionClasseController implements Initializable {
     
     private static Classe cl;
     @FXML
-    private TableColumn<Classe, Integer> id;
-    @FXML
     private TableColumn<Classe, String> bloc;
     @FXML
     private TableColumn<Classe, String> libelle;
@@ -89,7 +87,6 @@ public class GestionClasseController implements Initializable {
         }
         ObservableList<Classe> obs = FXCollections.observableArrayList(cla);
         table.setItems(obs);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
         libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
         tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
@@ -119,7 +116,6 @@ public class GestionClasseController implements Initializable {
         }
         ObservableList<Classe> obs5 = FXCollections.observableArrayList(cla5);
         table.setItems(obs5);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
         libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
         tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
@@ -162,7 +158,6 @@ public class GestionClasseController implements Initializable {
         }
         ObservableList<Classe> obs5 = FXCollections.observableArrayList(cla5);
         table.setItems(obs5);
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
         libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
         tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
@@ -201,7 +196,6 @@ public class GestionClasseController implements Initializable {
                 }
                 ObservableList<Classe> obs1 = FXCollections.observableArrayList(cla1);
                 table.setItems(obs1);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
                 libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
                 tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
@@ -220,7 +214,6 @@ public class GestionClasseController implements Initializable {
                 }
                 ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
                 table.setItems(obs2);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
                 libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
                 tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
@@ -239,7 +232,6 @@ public class GestionClasseController implements Initializable {
                 }
                 ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
                 table.setItems(obs2);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
                 libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
                 tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
@@ -257,7 +249,6 @@ public class GestionClasseController implements Initializable {
                 }
                 ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
                 table.setItems(obs2);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
                 libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
                 tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
@@ -275,7 +266,6 @@ public class GestionClasseController implements Initializable {
                 }
                 ObservableList<Classe> obs2 = FXCollections.observableArrayList(cla2);
                 table.setItems(obs2);
-                id.setCellValueFactory(new PropertyValueFactory<>("id"));
                 bloc.setCellValueFactory(new PropertyValueFactory<>("bloc"));
                 libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
                 tmax.setCellValueFactory(new PropertyValueFactory<>("taillemax"));
