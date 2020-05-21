@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class DataSource {
         Connection cnx;
-        String url="jdbc:mysql://localhost/gestionReclamation";
+        String url="jdbc:mysql://localhost/gestionreclamation";
         String login="root";
         String pwd="";
         static DataSource ds;
