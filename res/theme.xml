@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <image name="problem.png"  />
+    <image name="status bar.borderBottom_1.png" type="multi"  />
+    <image name="status bar.borderBottom_2.png" type="multi"  />
+    <image name="status bar.borderBottomL_1.png" type="multi"  />
+    <image name="status bar.borderBottomL_2.png" type="multi"  />
+    <image name="status bar.borderBottomR_1.png" type="multi"  />
+    <image name="status bar.borderBottomR_2.png" type="multi"  />
+    <image name="status bar.borderCenter_1.png" type="multi"  />
+    <image name="status bar.borderCenter_2.png" type="multi"  />
+    <image name="status bar.borderLeft_1.png" type="multi"  />
+    <image name="status bar.borderLeft_2.png" type="multi"  />
+    <image name="status bar.borderRight_1.png" type="multi"  />
+    <image name="status bar.borderRight_2.png" type="multi"  />
+    <image name="status bar.borderTop_1.png" type="multi"  />
+    <image name="status bar.borderTop_2.png" type="multi"  />
+    <image name="status bar.borderTopL_1.png" type="multi"  />
+    <image name="status bar.borderTopL_2.png" type="multi"  />
+    <image name="status bar.borderTopR_1.png" type="multi"  />
+    <image name="status bar.borderTopR_2.png" type="multi"  />
+    <image name="status bar.sel#borderBottom_1.png" type="multi"  />
+    <image name="status bar.sel#borderBottomL_1.png" type="multi"  />
+    <image name="status bar.sel#borderBottomR_1.png" type="multi"  />
+    <image name="status bar.sel#borderCenter_1.png" type="multi"  />
+    <image name="status bar.sel#borderLeft_1.png" type="multi"  />
+    <image name="status bar.sel#borderRight_1.png" type="multi"  />
+    <image name="status bar.sel#borderTop_1.png" type="multi"  />
+    <image name="status bar.sel#borderTopL_1.png" type="multi"  />
+    <image name="status bar.sel#borderTopR_1.png" type="multi"  />
+    <theme name="Theme">
+        <val key="@includeNativeBool" value="true" />
+        <val key="sel#bgImage" value="status bar.borderCenter_1.png" />
+        <val key="sel#bgType" value="1" />
+    </theme>
+</resource>
