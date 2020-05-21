@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parentContainer" prefHeight="670.0" prefWidth="1179.0" style="-fx-background-color: #2F2843;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeReclamationController">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="670.0" prefWidth="345.0" style="-fx-background-color: #393351;">
+         <children>
+            <Pane layoutY="289.0" prefHeight="92.0" prefWidth="345.0" style="-fx-background-radius: 5; -fx-background-color: #FA2C56;">
+               <children>
+                  <Label layoutX="51.0" layoutY="29.0" text="Espace Administateur" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="deconnecter" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ajoutReclamation" prefHeight="25.0" prefWidth="136.0" styleClass="button2" stylesheets="@reclamation.css" text="          Se déconnecter" textFill="WHITE" />
+            <Circle fill="#fa2c56" layoutX="27.0" layoutY="23.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
+            <FontAwesomeIcon fill="WHITE" iconName="POWER_OFF" layoutX="17.0" layoutY="30.0" size="22" />
+         </children>
+      </Pane>
+      <Pane layoutX="340.0" layoutY="-245.0" prefHeight="491.0" prefWidth="758.0" rotate="41.6" style="-fx-background-color: #FA2C56; -fx-background-radius: 70;" />
+      <Button fx:id="reclama" layoutX="483.0" layoutY="290.0" mnemonicParsing="false" onAction="#reclama" opacity="0.7" prefHeight="184.0" prefWidth="203.0" styleClass="button2" stylesheets="@reclamation.css">
+         <graphic>
+            <Circle radius="63.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#1490e3" />
+                        <Stop color="#1bb3d1" offset="0.007662835249042145" />
+                        <Stop color="#500da8" offset="0.007662835249042145" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="82.0" fitWidth="71.0" layoutX="550.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/problem.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="rendez" layoutX="810.0" layoutY="290.0" mnemonicParsing="false" onAction="#rendez" opacity="0.7" prefHeight="184.0" prefWidth="203.0" styleClass="button2" stylesheets="@reclamation.css">
+         <graphic>
+            <Circle radius="63.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#148de3" />
+                        <Stop color="#148de3" offset="0.007662835249042145" />
+                        <Stop color="#308ac6" offset="0.007662835249042145" />
+                        <Stop color="#00ddff" offset="0.08812260536398464" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="60.0" fitWidth="71.0" layoutX="885.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/event.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="518.0" layoutY="450.0" text="Gestion De Reclamations" textFill="#32a4fb" />
+      <Label layoutX="844.0" layoutY="450.0" text="Gestion Des Rendez-vous" textFill="#32a4fb" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="397.0" prefWidth="677.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjoutRendezvousController">
+    <stylesheets>
+        <URL value="@ajoutrendezvous.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="lieu" layoutX="221.0" layoutY="139.0" onKeyReleased="#testLieu" prefHeight="25.0" prefWidth="234.0" promptText="Lieu" />
+      <DatePicker fx:id="date" layoutX="150.0" layoutY="225.0" onAction="#testDate" promptText="date" />
+      <Label fx:id="checkLieu" layoutX="221.0" layoutY="169.0" prefHeight="17.0" prefWidth="206.0" textFill="RED" />
+      <JFXTimePicker fx:id="heure" layoutX="401.0" layoutY="225.0" onAction="#testHeure" promptText="heure" />
+      <Label fx:id="checkdate" layoutX="151.0" layoutY="254.0" prefHeight="17.0" prefWidth="171.0" textFill="RED" />
+      <Label fx:id="checkHeure" layoutX="401.0" layoutY="254.0" prefHeight="17.0" prefWidth="171.0" textFill="RED" />
+      <ImageView fx:id="img" fitHeight="25.0" fitWidth="25.0" layoutX="462.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgDate" fitHeight="25.0" fitWidth="25.0" layoutX="335.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgHeure" fitHeight="25.0" fitWidth="25.0" layoutX="572.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane prefHeight="106.0" prefWidth="725.0" style="-fx-background-color: #3F2B63;">
+         <children>
+            <Label layoutX="186.0" layoutY="33.0" prefHeight="30.0" prefWidth="329.0" text="Ajouter Un RendezVous" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="294.0" prefHeight="106.0" prefWidth="725.0" style="-fx-background-color: #FA2C56;">
+         <children>
+            <Button fx:id="envoyerRV" alignment="CENTER" graphicTextGap="6.0" layoutX="208.0" layoutY="29.0" mnemonicParsing="false" onAction="#ajouterR" prefHeight="40.0" prefWidth="133.0" style="-fx-background-radius: 15;" styleClass="reclamation" stylesheets="@reclamation.css" text="Ajouter" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="PENCIL" size="15" />
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" graphicTextGap="6.0" layoutX="351.0" layoutY="29.0" mnemonicParsing="false" onAction="#viderR" prefHeight="40.0" prefWidth="133.0" style="-fx-background-radius: 15;" styleClass="reclamation" stylesheets="@reclamation.css" text="Vider" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="TIMES" size="15" />
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Label fx:id="idjeya" layoutX="31.0" layoutY="143.0" prefHeight="17.0" prefWidth="89.0" />
+   </children>
+</AnchorPane>

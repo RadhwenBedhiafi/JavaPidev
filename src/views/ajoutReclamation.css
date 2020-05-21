@@ -1,0 +1,121 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.linear-grad
+{
+	-fx-background-color: linear-gradient(to bottom left,#6F4CBB,#431FA0);
+}
+.button1
+{
+	-fx-background-color: #431FA0;
+	-fx-text-fill : #ffffff;
+}
+.button1:hover
+{
+	-fx-text-fill : #431FA0;
+}
+.button1:pressed
+{
+	-fx-text-fill : #371897;
+}
+.button1:active
+{
+	-fx-text-fill :#80AFF5;
+
+}
+.linear-grad1
+{
+	-fx-background-color: linear-gradient(to bottom left,#8B0000,#F08080	);
+}
+.button2
+{
+	-fx-background-color: #8B0000	;
+	-fx-text-fill : #ffffff;
+}
+.button2:hover
+{
+	-fx-text-fill : #DC143C;
+}
+.button2:pressed
+{
+	-fx-text-fill : #371897;
+}
+.button2:active
+{
+	-fx-text-fill :#80AFF5;
+
+}
+.table
+{
+        -fx-control-inner-background: #431FA0;
+        -fx-control-inner-background-alt: #431FA0;   
+}
+.button3
+{
+	-fx-background-color:   #393351;
+	-fx-background-radius: 20;
+}
+.button3:hover
+{
+	-fx-background-color :   #524A7B;
+        -fx-background-radius: 20;
+}
+.button3:pressed
+{
+	-fx-background-color :   #2F2B43;
+        -fx-background-radius: 20;
+}
+.button3:active
+{
+	-fx-background-color :  #393351;
+        -fx-background-radius: 20;
+
+}
+.button4
+{
+	-fx-background-color:    #3F2B63;
+        -fx-background-radius: 20;
+	
+}
+.button4:hover
+{
+	-fx-background-color :    #524A7B;
+        -fx-background-radius: 20;
+}
+.button4:pressed
+{
+	-fx-background-color :    #2F2B43;
+        -fx-background-radius: 20;
+}
+.button4:active
+{
+	-fx-text-fill :   #3F2B63;
+        -fx-background-radius: 20;
+
+}
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-cell-size: 20;
+    -fx-background-color:   #483D8B;
+}
+.table-view .column-header .label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+.table-view .cell{
+    -fx-cell-size: 30;
+    -fx-alignment: center-left;
+    -fx-text-fill: #000000;
+    -fx-alignment: CENTER_LEFT;
+}
+.table-row-cell:selected{
+    -fx-background-color: rgb(127,172,243);
+}
+.table-row-cell:selected.text{
+    -fx-fill: white;
+}
