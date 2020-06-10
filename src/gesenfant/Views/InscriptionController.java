@@ -85,14 +85,14 @@ public class InscriptionController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         MediaPlayer mediaplayer;
         
-        Media musicFile= new Media("file:///C:/Users/elbaz/Downloads/Music/abc.mp3");
+        Media musicFile= new Media("file:///C:/Users/elbaz/Downloads/abc.mp3");
         mediaplayer= new MediaPlayer(musicFile);
         mediaplayer.setAutoPlay(false);
         mediaplayer.setVolume(0.1);
         
         
         
-            ObservableList<String> sexeList= FXCollections.observableArrayList("Homme","Femme");
+            ObservableList<String> sexeList= FXCollections.observableArrayList("Garçon","Fille");
             sexe.setItems(sexeList);
             sexe.getSelectionModel().select("Sexe");
     
@@ -166,7 +166,7 @@ public class InscriptionController implements Initializable {
          }
         });
         web.setOnAction(e->{
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\elbaz\\Downloads\\Compressed\\chromedriver_win32\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\elbaz\\Desktop\\Radhwen\\chromedriver_win32\\chromedriver.exe");
  
 // Initialize browser
 WebDriver driver=new ChromeDriver();

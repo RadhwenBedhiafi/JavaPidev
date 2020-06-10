@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class DataBase {
     private static DataBase instance;
     private Connection connexion;
-    private String url = "JDBC:mysql://localhost/java?useSSL=false";
+    private String url = "JDBC:mysql://localhost/jardindenfant?useSSL=false";
     private String user = "root";
     private String password = "";
     

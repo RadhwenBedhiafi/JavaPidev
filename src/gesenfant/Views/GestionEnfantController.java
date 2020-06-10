@@ -22,6 +22,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import gesenfant.Entities.Enfant;
 import gesenfant.Service.EnfantService;
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -223,6 +225,8 @@ public class GestionEnfantController implements Initializable {
                 nationalite.setCellValueFactory(new PropertyValueFactory<>("nationalite"));
                 smedical.setCellValueFactory(new PropertyValueFactory<>("smedical"));
                 classe.setCellValueFactory(new PropertyValueFactory<>("classe"));
+                enf11= (ArrayList<Enfant>) enf1;
+                
             
         });  
        iden.setOnAction(e-> {
@@ -375,7 +379,7 @@ public class GestionEnfantController implements Initializable {
 
         PdfWriter writer = null;    //C:\Users\malek.heni\Desktop
         try {
-            writer = PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\elbaz\\OneDrive\\Desktop\\Liste.pdf"));
+            writer = PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\elbaz\\Desktop\\Liste.pdf"));
         } catch (FileNotFoundException ex) {
         } catch (DocumentException ex) {
         }
@@ -529,6 +533,13 @@ public class GestionEnfantController implements Initializable {
 
         document.close();
         writer.close();
+        File pdffile = new File("C:\\Users\\elbaz\\Desktop\\Liste.pdf");
+           try {
+               Desktop.getDesktop().open(pdffile);
+           } catch (IOException ex) {
+               Logger.getLogger(EnfantService.class.getName()).log(Level.SEVERE, null, ex);
+           }
+
     
   
 

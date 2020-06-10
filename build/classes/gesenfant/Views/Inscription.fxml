@@ -40,7 +40,7 @@
                               </Label>
                               <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="107.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="file:/C:/Users/elbaz/OneDrive/Desktop/pidev/wwwx.png" />
+                                    <Image url="file:/C:/Users/elbaz/Desktop/Radhwen/images/wwwx.png" />
                                  </image>
                               </ImageView>
                               <Button fx:id="shutdown" layoutX="40.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="shutdown" stylesheets="@login1.css" textFill="WHITE" />

@@ -49,7 +49,7 @@ public class Login1Controller implements Initializable {
         String b=password.getText();
         int x=u.getUsername().compareTo(a);
         int y=u.getPassword().compareTo(b);
-            if (a.equals("admin")&&b.equals("admin")){
+            if (a.equals("admin")&& b.equals("admin")){
                System.out.println(a);
         System.out.println(b); 
             try {

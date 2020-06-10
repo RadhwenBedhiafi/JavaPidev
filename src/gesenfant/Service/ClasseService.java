@@ -109,6 +109,25 @@ public class ClasseService {
         return (ArrayList<Classe>) arr;
          
     }
+     public ArrayList<Classe> getByLib(String libelle) throws SQLException{
+       List<Classe> arr = new ArrayList<>();
+
+     String req1="SELECT * FROM classe WHERE libelle like '"+libelle+"%'";
+       // PreparedStatement pre=con.prepareStatement(req1);
+        ste=connexion.createStatement();
+        ResultSet rs=ste.executeQuery(req1);
+        Classe c = new Classe();
+        while(rs.next())
+        {
+                        int id = rs.getInt("id");
+            String bloc = rs.getString("bloc");
+            int taillemax = rs.getInt("taillemax");
+            c = new Classe(id, bloc, libelle, taillemax);   
+           arr.add(c);
+        }
+        return (ArrayList<Classe>) arr;
+         
+    }
      public List<Classe> readAllA() throws SQLException {
         List<Classe> arr = new ArrayList<>();
         ste = connexion.createStatement();

@@ -72,6 +72,12 @@ public class ListeClasseController implements Initializable {
     private ComboBox<String> classeinp;
     @FXML
     private Button rechercherbtn;
+    @FXML
+    private Button gnrtpdf;
+    private static ArrayList<Enfant> enf11;
+        private static Enfant en;
+
+
 
     /**
      * Initializes the controller class.
@@ -135,8 +141,13 @@ public class ListeClasseController implements Initializable {
                 age.setCellValueFactory(new PropertyValueFactory<>("age"));
                 nationalite.setCellValueFactory(new PropertyValueFactory<>("nationalite"));
                 smedical.setCellValueFactory(new PropertyValueFactory<>("smedical"));
+                                enf11= (ArrayList<Enfant>) enf2;
+
+
             
         });  
+                    
+
     retour.setOnAction(e->{
             try {
                 Parent root;
@@ -147,6 +158,11 @@ public class ListeClasseController implements Initializable {
             }
            
         }); 
+   
+    
+}
+}
 
-}
-}
+
+
+
