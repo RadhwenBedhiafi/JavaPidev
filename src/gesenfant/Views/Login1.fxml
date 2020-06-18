@@ -26,7 +26,7 @@
                   </Label>
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/C:/Users/elbaz/OneDrive/Desktop/pidev/wwwx.png" />
+                        <Image url="file:/C:/Users/elbaz/Desktop/Radhwen/pidev/wwwx.png" />
                      </image>
                   </ImageView>
                </children>

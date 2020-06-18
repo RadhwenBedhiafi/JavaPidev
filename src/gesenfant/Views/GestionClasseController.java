@@ -189,8 +189,7 @@ public class GestionClasseController implements Initializable {
                 ArrayList<Classe> cla1= new ArrayList<Classe>();
                 try {
                     String r=rechercher.getText();
-                    int i=Integer.parseInt(r);
-                    cla1 = (ArrayList<Classe>) cs1.getById(i);
+                    cla1 = (ArrayList<Classe>) cs1.getByLib(r);
                 } catch (SQLException ex) {
                     Logger.getLogger(GestionEnfantController.class.getName()).log(Level.SEVERE, null, ex);
                 }

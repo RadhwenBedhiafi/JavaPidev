@@ -44,7 +44,7 @@ public class StatistiqueController implements Initializable {
             int x=es.getEffectifHomme();
             int y=es.getEffectifFemme();
             ObservableList<PieChart.Data> pieChartData=FXCollections.observableArrayList(
-                    new PieChart.Data("Homme",x),new PieChart.Data("Femme", y));
+                    new PieChart.Data("Garçon",x),new PieChart.Data("Fille", y));
             piechart.setData(pieChartData);
             piechart.setStartAngle(90);
             // TODO
