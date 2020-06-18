@@ -20,17 +20,19 @@ public class Enfant {
     private String nationalite ;
     private String smedical ;
     private String classe;
+    private String image;
 
     public Enfant() {
     }
     
-    public Enfant(String nom, String prenom, String sexe, int age, String nationalite, String smedical) {
+    public Enfant(String nom, String prenom, String sexe, int age, String nationalite, String smedical,String image) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
         this.age = age;
         this.nationalite = nationalite;
         this.smedical = smedical;
+        this.image=image;
     }
 
     public String getClasse() {
@@ -41,15 +43,15 @@ public class Enfant {
         this.classe = classe;
     }
 
-    public Enfant(String nom, String prenom, String sexe, int age, String nationalite, String smedical, String classe) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.sexe = sexe;
-        this.age = age;
-        this.nationalite = nationalite;
-        this.smedical = smedical;
-        this.classe = classe;
+    public String getImage() {
+        return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+
 
     public int getId() {
         return id;

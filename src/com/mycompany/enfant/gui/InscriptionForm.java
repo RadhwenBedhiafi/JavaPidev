@@ -4,10 +4,14 @@
  * and open the template in the editor.
  */
 package com.mycompany.enfant.gui;
+import com.codename1.capture.Capture;
 import static com.mycompany.enfant.entities.SMS.SMS_DON;
 
 import com.codename1.components.ImageViewer;
+import com.codename1.components.InfiniteProgress;
 import com.codename1.components.SpanLabel;
+import com.codename1.io.MultipartRequest;
+import com.codename1.io.NetworkManager;
 import com.codename1.notifications.LocalNotification;
 import com.codename1.notifications.LocalNotificationCallback;
 import com.codename1.ui.AutoCompleteTextField;
@@ -32,13 +36,16 @@ import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.mycompany.enfant.entities.Enfant;
 import com.mycompany.enfant.service.EnfantService;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
  * @author elbaz
  */
 public class InscriptionForm extends Form{
+    private String im;
 
 
     InscriptionForm(Form previous) {
@@ -51,6 +58,7 @@ public class InscriptionForm extends Form{
          Container c5=new Container(BoxLayout.x());
          Container c6=new Container(BoxLayout.x());
          Container c7=new Container(BoxLayout.y());
+         Container c8=new Container(BoxLayout.y());
          Button retour=new Button("Retour au menu précedent");
          Button ajouter=new Button("Validez!");
           SpanLabel nom = new SpanLabel("Nom");
@@ -59,6 +67,9 @@ public class InscriptionForm extends Form{
       SpanLabel age = new SpanLabel("Age:");
       SpanLabel nationalite = new SpanLabel("Nationalité");
       SpanLabel smedical = new SpanLabel("Status médical:");
+      Button image1=new Button("Inserer votre image");
+      
+
 
          TextField nom1=new TextField();
          TextField prenom1=new TextField();
@@ -75,10 +86,32 @@ public class InscriptionForm extends Form{
          c4.add(sexe).add(sexe1);
          c5.add(age).add(age1);
          c6.add(nationalite).add(nationalite1);
+         c8.add(image1);
          
-         c7.add(c).add(c2).add(c3).add(c4).add(c5).add(c6).add(c1).add(ajouter)   ;
+         c7.add(c).add(c2).add(c3).add(c4).add(c5).add(c6).add(c1).add(c8).add(ajouter)   ;
          add(c7);
          retour.addActionListener(e -> previous.showBack());
+         image1.addActionListener(e->{
+            try {
+                String fileNameInServer = "";
+                MultipartRequest cr = new MultipartRequest();
+                String filepath = Capture.capturePhoto(-1, -1);
+                cr.setUrl("http://localhost/uploadimage.php");
+                cr.setPost(true);
+                String mime = "image/jpeg";
+                cr.addData("file", filepath, mime);
+                String out = new com.codename1.l10n.SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+                cr.setFilename("file", out + ".jpg");//any unique name you want
+                fileNameInServer += out + ".jpg";
+                System.err.println("path2 =" + fileNameInServer);
+                im=fileNameInServer ;
+                InfiniteProgress prog = new InfiniteProgress();
+                Dialog dlg = prog.showInifiniteBlocking();
+                cr.setDisposeOnCompletion(dlg);
+                NetworkManager.getInstance().addToQueueAndWait(cr);
+                
+                } catch (IOException ex) {}  
+        });
          ajouter.addActionListener(new ActionListener()
         { 
              
@@ -104,10 +137,11 @@ public class InscriptionForm extends Form{
                     
                         
                         Enfant t = new Enfant(nom1.getText(), prenom1.getText(), sexe1.getSelectedItem().toString()
-                                , Integer.parseInt(age1.getText()), nationalite1.getText(), smedical1.getText());
+                                , Integer.parseInt(age1.getText()), nationalite1.getText(), smedical1.getText(),im);
                         
                     try {
                         ser.addTask(t);
+                        System.out.println(t.getImage());
                          if( EnfantService.getInstance().addTask(t)){
                             Dialog.show("Success","Inscription effectuée",new Command("OK"));
                             String id1=nom1.getText();

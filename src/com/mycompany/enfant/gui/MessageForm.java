@@ -17,7 +17,7 @@ import com.codename1.ui.Form;
 public class MessageForm extends Form {
     public MessageForm(Form previous) {
          Message mes = new Message("Body of message");
-        Display.getInstance().sendMessage(new String[] {"radhwenbedhiafi997@gmail.com"}, "Subject of message", mes);
+        Display.getInstance().sendMessage(new String[] {"radhouan.bedhiafi@esprit.tn"}, "Subject of message", mes);
          
        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
 

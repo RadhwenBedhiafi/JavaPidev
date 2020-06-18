@@ -156,6 +156,7 @@ public static EnfantService getInstance() {
                  e.setAge((int) age);
                  e.setNationalite(obj.get("nationalite").toString());
                  e.setSmedical(obj.get("smedical").toString());
+//                 e.setImage(obj.get("image").toString());
 
 
                  
@@ -206,6 +207,8 @@ public static EnfantService getInstance() {
                  t.setAge((int) age);
                  t.setNationalite(obj.get("nationalite").toString());
                  t.setSmedical(obj.get("smedical").toString());
+                 t.setImage(obj.get("image").toString());
+
                 enfants.add(t);
             }
 
@@ -257,7 +260,7 @@ public static EnfantService getInstance() {
         return enfants;
     }
      public boolean addTask(Enfant p) {
-         String url = "http://localhost/GesEnfantWebDev/web/app_dev.php/enfant/addenfant?nom="+p.getNom()+"&prenom="+p.getPrenom()+"&sexe="+p.getSexe()+"&age="+p.getAge()+"&nationalite="+p.getNationalite()+"&smedical="+p.getSmedical();//création de l'URL
+         String url = "http://localhost/GesEnfantWebDev/web/app_dev.php/enfant/addenfant?nom="+p.getNom()+"&prenom="+p.getPrenom()+"&sexe="+p.getSexe()+"&age="+p.getAge()+"&nationalite="+p.getNationalite()+"&smedical="+p.getSmedical()+"&image="+p.getImage();//création de l'URL
         req.setUrl(url);// Insertion de l'URL de notre demande de connexion
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override

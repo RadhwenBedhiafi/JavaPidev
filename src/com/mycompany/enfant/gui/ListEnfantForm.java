@@ -62,9 +62,7 @@ public class ListEnfantForm extends Form {
             SpanLabel s4 = new SpanLabel("-------------------------------------------------------------");
         
         c.addAll(sp,sp1,sp2,sp3,sp4,sp5,s4);
-        Button btnAjouterDemande = new Button("Inscrire votre enfant maintenant");
-        
-        btnAjouterDemande.addActionListener(e-> new InscriptionForm(current).show());
+       
         add(c);
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
         

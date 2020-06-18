@@ -36,38 +36,44 @@ public class HomeForm extends Form {
         this.getAllStyles().setBgColor(0x09224a);
         Container c = new Container(new BoxLayout(BoxLayout.Y_AXIS));
         c.setX(CENTER);
-        Container c1=new Container(new BoxLayout(BoxLayout.X_AXIS));
+        Container c1=new Container(new BoxLayout(BoxLayout.Y_AXIS));
         c1.setWidth(500);
-        Container c2=new Container(new BoxLayout(BoxLayout.X_AXIS));
-        Container c3=new Container(new BoxLayout(BoxLayout.X_AXIS));
-        Container c4=new Container(new BoxLayout(BoxLayout.X_AXIS));
-        Container c5=new Container(new BoxLayout(BoxLayout.X_AXIS));
-                Container c6=new Container(new BoxLayout(BoxLayout.X_AXIS));
+        Container c2=new Container(new BoxLayout(BoxLayout.Y_AXIS));
+        Container c3=new Container(new BoxLayout(BoxLayout.Y_AXIS));
+        Container c4=new Container(new BoxLayout(BoxLayout.Y_AXIS));
+        Container c5=new Container(new BoxLayout(BoxLayout.Y_AXIS));
+        Container c6=new Container(new BoxLayout(BoxLayout.Y_AXIS));
+        Container c7=new Container(new BoxLayout(BoxLayout.Y_AXIS));
 
 
 
 
-        Label s = new Label("                    Nos services:");
+        Label s = new Label("                    Nos services");
         s.getAllStyles().setFgColor(0xFA2C56);
         
         Button btnInscription=new Button("Inscrire votre enfant",Image.createImage("/boy.png").fill(50, 50));
         btnInscription.setTextPosition(Component.BOTTOM);
         btnInscription.setSize(c.getPreferredSize());
-        Button btnListEnfant=new Button("Consulter la liste des enfants",Image.createImage("/classroom.png").fill(50, 50));
+        Button btnListEnfant=new Button("Consulter la liste des enfants",Image.createImage("/status.png").fill(50, 50));
         btnListEnfant.setTextPosition(Component.BOTTOM);
-        Button btnStat=new Button("Statistique",Image.createImage("/classroom.png").fill(50, 50));
+        Button btnStat=new Button("Statistique: Pie chart",Image.createImage("/business.png").fill(50, 50));
         btnStat.setTextPosition(Component.BOTTOM);
                btnInscription.addActionListener(e -> new InscriptionForm(current).show());
                btnListEnfant.addActionListener(e -> new ListEnfantForm(current).show());
                btnStat.addActionListener(e -> new ChartForm(current).show());
-        Button btnchart = new Button("Bar Chart",Image.createImage("/business.png").fill(50, 50));
+        Button btnchart = new Button("Statistique: Bar chart",Image.createImage("/bars.png").fill(50, 50));
                 btnchart.setTextPosition(Component.BOTTOM);
+        Button btnListClasse=new Button("Consulter la liste des classes disponible",Image.createImage("/classroom.png").fill(50, 50));
+        btnListClasse.addActionListener(e -> new ListClasseForm(current).show());
+
 
         btnchart.addActionListener(e -> new ChartDemosForm(current).show());
-        Button mail = new Button("Envoyer un e-mail",Image.createImage("/classroom.png"));
+        Button mail = new Button("Envoyer un e-mail",Image.createImage("/send.png"));
                 mail.setTextPosition(Component.BOTTOM);
 
              mail.addActionListener(e -> new MessageForm(current).show());
+        
+      
  
         c1.add(s);
         c2.add(btnInscription);
@@ -75,8 +81,9 @@ public class HomeForm extends Form {
         c4.add(btnStat);
         c5.add(btnchart);
         c6.add(mail);
+        c7.add(btnListClasse);
 
-        c.addAll(c1,c2,c3,c4,c5,c6);
+        c.addAll(c1,c2,c7,c3,c4,c5,c6);
         add(c);
 
     }
