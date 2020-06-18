@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gevenement.Views.ModifierPlanController">
+   <children>
+      <Pane layoutY="-12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1147.0">
+         <children>
+            <Pane prefHeight="755.0" prefWidth="292.0" style="-fx-background-color: #393351;" stylesheets="@login1.css">
+               <children>
+                  <Pane layoutY="174.0" prefHeight="81.0" prefWidth="292.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+                     <children>
+                        <Label layoutX="15.0" layoutY="24.0" text="Gestion des évenements" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="r" layoutX="44.0" layoutY="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" styleClass="button3" stylesheets="@login1.css" text="Menu précedent" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <DatePicker fx:id="datedebut" layoutX="486.0" layoutY="334.0" promptText="Insérer la date debut" />
+            <Label layoutX="472.0" layoutY="200.0" text="Modifier un plan!">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="confirmer" layoutX="671.0" layoutY="594.0" mnemonicParsing="false" styleClass="button2" stylesheets="@login1.css" text="Confirmer" />
+            <Pane layoutX="292.0" layoutY="60.0" prefHeight="81.0" prefWidth="859.0" style="-fx-background-color: #FA2C56;">
+               <children>
+                  <Label layoutX="26.0" layoutY="16.0" text="Jardin d'enfant ELITE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <DatePicker fx:id="datefin" layoutX="486.0" layoutY="409.0" promptText="Insérer la date fin" />
+            <TextField fx:id="titre" layoutX="490.0" layoutY="496.0" promptText="Choisir un titre" stylesheets="@login1.css" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

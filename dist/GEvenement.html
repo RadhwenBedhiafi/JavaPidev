@@ -1,0 +1,45 @@
+<html><head>
+  <SCRIPT src="http://java.com/js/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'GEvenement.jnlp',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0iR0V2ZW5lbWVudC5qbmxwIj4NCiAgPGluZm9ybWF0aW9uPg0KICAgIDx0aXRsZT5HRXZlbmVtZW50PC90aXRsZT4NCiAgICA8dmVuZG9yPkxlbm92bzwvdmVuZG9yPg0KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4NCiAgICA8b2ZmbGluZS1hbGxvd2VkLz4NCiAgPC9pbmZvcm1hdGlvbj4NCiAgPHJlc291cmNlcz4NCiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+DQogICAgPGphciBocmVmPSJHRXZlbmVtZW50LmphciIgc2l6ZT0iNTEwMTUiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxieXRlLWJ1ZGR5LTEuOC4xNS5qYXIiIHNpemU9IjI5ODcyNjkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxjbGllbnQtY29tYmluZWQtMy4xNDEuNTktc291cmNlcy5qYXIiIHNpemU9IjUyOTc0MyIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGNsaWVudC1jb21iaW5lZC0zLjE0MS41OS5qYXIiIHNpemU9IjE1Mjc4NzkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxjb21tb25zLWV4ZWMtMS4zLmphciIgc2l6ZT0iNTQ0MjMiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxmb250YXdlc29tZWZ4LWNvbW1vbnMtOS4xLjIuamFyIiBzaXplPSIyNDA2NCIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGZvbnRhd2Vzb21lZngtZm9udGF3ZXNvbWUtNC43LjAtOS4xLjIuamFyIiBzaXplPSIxMzcyMjYiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxndWF2YS0yNS4wLWpyZS5qYXIiIHNpemU9IjI3MzgxNzEiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxpdGV4dHBkZi01LjEuMC5qYXIiIHNpemU9IjE2MTQ0NTMiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxqYXZheC5tYWlsLmphciIgc2l6ZT0iNjU5MDMzIiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcbXlzcWwtY29ubmVjdG9yLWphdmEtNS4xLjQ4LWJpbi5qYXIiIHNpemU9IjEwMDY5NTkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxva2h0dHAtMy4xMS4wLmphciIgc2l6ZT0iNDEzNjM5IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcb2tpby0xLjE0LjAuamFyIiBzaXplPSI4NTc1NiIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICA8L3Jlc291cmNlcz4NCiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIG1haW4tY2xhc3M9ImdldmVuZW1lbnQuVmlld3MuR0V2ZW5lbWVudCIgIG5hbWU9IkdFdmVuZW1lbnQiIC8+DQogIDx1cGRhdGUgY2hlY2s9ImFsd2F5cyIvPg0KPC9qbmxwPg0K'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedgevenement.Views() {
+        dtjava.embed(
+            {
+                id : 'gevenement.Views',
+                url : 'GEvenement.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '800',
+                height : '600',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0iR0V2ZW5lbWVudC5qbmxwIj4NCiAgPGluZm9ybWF0aW9uPg0KICAgIDx0aXRsZT5HRXZlbmVtZW50PC90aXRsZT4NCiAgICA8dmVuZG9yPkxlbm92bzwvdmVuZG9yPg0KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4NCiAgICA8b2ZmbGluZS1hbGxvd2VkLz4NCiAgPC9pbmZvcm1hdGlvbj4NCiAgPHJlc291cmNlcz4NCiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+DQogICAgPGphciBocmVmPSJHRXZlbmVtZW50LmphciIgc2l6ZT0iNTEwMTUiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxieXRlLWJ1ZGR5LTEuOC4xNS5qYXIiIHNpemU9IjI5ODcyNjkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxjbGllbnQtY29tYmluZWQtMy4xNDEuNTktc291cmNlcy5qYXIiIHNpemU9IjUyOTc0MyIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGNsaWVudC1jb21iaW5lZC0zLjE0MS41OS5qYXIiIHNpemU9IjE1Mjc4NzkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxjb21tb25zLWV4ZWMtMS4zLmphciIgc2l6ZT0iNTQ0MjMiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxmb250YXdlc29tZWZ4LWNvbW1vbnMtOS4xLjIuamFyIiBzaXplPSIyNDA2NCIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGZvbnRhd2Vzb21lZngtZm9udGF3ZXNvbWUtNC43LjAtOS4xLjIuamFyIiBzaXplPSIxMzcyMjYiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxndWF2YS0yNS4wLWpyZS5qYXIiIHNpemU9IjI3MzgxNzEiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxpdGV4dHBkZi01LjEuMC5qYXIiIHNpemU9IjE2MTQ0NTMiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxqYXZheC5tYWlsLmphciIgc2l6ZT0iNjU5MDMzIiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcbXlzcWwtY29ubmVjdG9yLWphdmEtNS4xLjQ4LWJpbi5qYXIiIHNpemU9IjEwMDY5NTkiIGRvd25sb2FkPSJlYWdlciIgLz4NCiAgICA8amFyIGhyZWY9ImxpYlxva2h0dHAtMy4xMS4wLmphciIgc2l6ZT0iNDEzNjM5IiBkb3dubG9hZD0iZWFnZXIiIC8+DQogICAgPGphciBocmVmPSJsaWJcb2tpby0xLjE0LjAuamFyIiBzaXplPSI4NTc1NiIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICA8L3Jlc291cmNlcz4NCiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIG1haW4tY2xhc3M9ImdldmVuZW1lbnQuVmlld3MuR0V2ZW5lbWVudCIgIG5hbWU9IkdFdmVuZW1lbnQiIC8+DQogIDx1cGRhdGUgY2hlY2s9ImFsd2F5cyIvPg0KPC9qbmxwPg0K'
+            },
+            {
+                javafx : '8.0+'
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedgevenement.Views);
+</script>
+
+</head><body>
+<h2>Test page for <b>GEvenement</b></h2>
+  <b>Webstart:</b> <a href='GEvenement.jnlp' onclick="return launchApplication('GEvenement.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gevenement.Views.AjoutEvenementController">
+   <children>
+      <Pane prefHeight="755.0" prefWidth="292.0" style="-fx-background-color: #393351;" stylesheets="@login1.css">
+         <children>
+            <Pane layoutY="174.0" prefHeight="81.0" prefWidth="292.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="15.0" layoutY="24.0" text="Gestion des évenements" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="r" layoutX="37.0" layoutY="26.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="172.0" styleClass="button3" stylesheets="@login1.css" text="Menu précedent" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TextField fx:id="sujet" layoutX="486.0" layoutY="265.0" promptText="Insérer le sujet" />
+      <DatePicker fx:id="date" layoutX="486.0" layoutY="334.0" promptText="Insérer la date" />
+      <TextField fx:id="lieu" layoutX="486.0" layoutY="399.0" promptText="Insérer le lieu" />
+      <TextField fx:id="description" layoutX="486.0" layoutY="467.0" promptText="Insérer la description" />
+      <Label layoutX="472.0" layoutY="200.0" text="Ajouter un évenement!">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="confirmer" layoutX="671.0" layoutY="594.0" mnemonicParsing="false" styleClass="button2" stylesheets="@login1.css" text="Confirmer" />
+      <Pane layoutX="292.0" layoutY="60.0" prefHeight="81.0" prefWidth="859.0" style="-fx-background-color: #FA2C56;">
+         <children>
+            <Label layoutX="26.0" layoutY="16.0" text="Jardin d'enfant ELITE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ComboBox fx:id="titre" layoutX="486.0" layoutY="544.0" prefWidth="150.0" promptText="Choisir un titre" styleClass="linear-grad2" stylesheets="@login1.css" />
+   </children>
+</Pane>

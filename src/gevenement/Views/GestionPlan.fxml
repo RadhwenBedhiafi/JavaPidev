@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gevenement.Views.GestionPlanController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="755.0" prefWidth="292.0" style="-fx-background-color: #3F2B63;" stylesheets="@login1.css">
+               <children>
+                  <Pane layoutY="174.0" prefHeight="81.0" prefWidth="292.0" style="-fx-background-color: #FA2C56; -fx-background-radius: 5;">
+                     <children>
+                        <Label layoutX="15.0" layoutY="24.0" text="Gestion des plans" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="ajouter" layoutY="340.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="292.0" styleClass="button4" stylesheets="@login1.css" text="Ajouter plan" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="modifier" layoutY="406.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="292.0" styleClass="button4" stylesheets="@login1.css" text="Modifier plan" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="supprimer" layoutY="467.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="292.0" styleClass="button4" text="Supprimer plan" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="r" layoutX="40.0" layoutY="25.0" mnemonicParsing="false" styleClass="button4" stylesheets="@login1.css" text="Menu précedent" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="afficher" layoutY="522.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="292.0" styleClass="button4" text="Actualiser" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="292.0" layoutY="60.0" prefHeight="81.0" prefWidth="859.0" style="-fx-background-color: #FA2C56;">
+               <children>
+                  <Label layoutX="26.0" layoutY="16.0" text="Jardin d'enfant ELITE" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="34.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <GridPane layoutX="352.0" layoutY="206.0" prefHeight="512.0" prefWidth="743.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView fx:id="table" prefHeight="32.0" prefWidth="524.0" stylesheets="@login1.css">
+                     <columns>
+                        <TableColumn fx:id="datedebut" prefWidth="75.0" text="Date debut" />
+                        <TableColumn fx:id="datefin" prefWidth="75.0" text="Date fin" />
+                        <TableColumn fx:id="titre" prefWidth="75.0" text="Titre" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
