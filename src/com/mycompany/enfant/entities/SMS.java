@@ -20,7 +20,7 @@ public class SMS {
     public static void SMS_DON(String id1,String id2) {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message.creator(new PhoneNumber("+21628237848"),//to
-                new PhoneNumber("++12057073301"),//from 
-                "UNE NOUVELLE INSCRIPTION EST EFFECTUE AFEC SUCCES SOUS LE NOM : "+id1+" ET LE PRENOM: "+id2+"SERVICE TECHNIQUE JARDIN D'ENFANT ELITE ").create();
+                new PhoneNumber("+12057073301"),//from 
+                "UNE NOUVELLE INSCRIPTION EST EFFECTUE AFEC SUCCES SOUS LE NOM : "+id1+" ET LE PRENOM: "+id2+" SERVICE TECHNIQUE JARDIN D'ENFANT ELITE ").create();
     }
 }
